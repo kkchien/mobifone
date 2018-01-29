@@ -1,0 +1,793 @@
+{
+  "api": {
+    "order": {
+      "post": "https://mobiwifi.mobifone.vn/apimobiwifi/order",
+      "airport": "https://mobiwifi.mobifone.vn/apimobiwifi/order/agency/1",
+      "status": "https://mobiwifi.mobifone.vn/apimobiwifi/order/param",
+      "country": "https://mobiwifi.mobifone.vn/apimobiwifi/order/price",
+      "province": "https://mobiwifi.mobifone.vn/apimobiwifi/area/parentagency/1",
+      "children": "https://mobiwifi.mobifone.vn/apimobiwifi/agency/area/",
+      "area": "https://mobiwifi.mobifone.vn/apimobiwifi/order/agency/byarea",
+      "packages": "https://mobiwifi.mobifone.vn/apimobiwifi/packageprice/package/",
+      "price": "https://mobiwifi.mobifone.vn/apimobiwifi/packageprice/price/",
+      "code-sale": "https://mobiwifi.mobifone.vn/apimobiwifi/packageprice/codesale/"
+    },
+    "faq": {
+      "list": "https://mobiwifi.mobifone.vn/apimobiwifi/faqs/"
+    }
+  },
+  "language": [
+    {
+      "header": {
+        "banner": "Thông tin liên hệ: 0904123456",
+        "menu": [
+          {
+            "url": "home",
+            "name": "Mobiwifi"
+          },
+          {
+            "url": "home",
+            "name": "Tiện ích",
+            "target":"instruction"
+          },
+         
+          {
+            "url": "home",
+            "name": "Giá cước",
+            "target":"price-table"
+          },
+          {
+            "url": "home",
+            "name": "Hướng dẫn đặt hàng",
+            "target":"register"
+          },
+          
+          {
+            
+            "name": "Thông tin",
+            "submenuinfo": [
+              {
+                "url": "new",
+                "namechil": "Tin tức"
+              },
+              {
+                "url": "orderplace",
+                "namechil": "Địa điểm đặt hàng"
+              },
+              {
+                "url": "faq",
+                "namechil": "Hỏi đáp"
+              }
+            ]
+          },
+         
+        
+          {
+            "url": "contact",
+            "name": "Liên hệ"
+          }
+        ]
+      },
+      "footer": {
+        "link": {
+          "link1": {
+            "url": "order",
+            "title": "ĐĂNG KÝ"
+          },
+          "link2": {
+            "url": "faq",
+            "title": "HỎI ĐÁP"
+          },
+          "link3": {
+            "url": "contact",
+            "title": "LIÊN HỆ"
+          },
+          "link4": {
+            "url": "",
+            "title": "NHẬN XÉT"
+          },
+          "link5": {
+            "url": "",
+            "title": "THÔNG TIN"
+          },
+          "link6": {
+            "url": "",
+            "title": "ĐỐI TÁC"
+          },
+          "link7": {
+            "url": "",
+            "title": "ĐIỀU KHOẢN & ĐIỀU KIỆN"
+          }
+        },
+        "second": "Thanh toán trực tuyến an toàn",
+        "last": "Kết bạn với chúng tôi"
+      },
+      "app": {
+        "contact": {
+          "title": "Liên hệ"
+        },
+        "faq": {
+          "title": "Câu hỏi thường gặp"
+        },
+        "price-table": {
+          "title": "Bảng giá",
+          "topic": "Bảng giá cho thuê wifi",
+          "price-label": "Giá"
+        },
+        "home": {
+          "title": "Trang chủ",
+          "banner": "assets/banner2.jpg",
+          "buttonorder":"Đặt hàng",
+          "instruction": {
+            "title": {
+              "simple": "Chúng tôi cung cấp những gì?",
+              "strong": ""
+            },
+            "p": [
+              "Chúng tôi cung cấp giải pháp để có được Internet trong chuyến du lịch của bạn: Dịch vụ cho thuê WiFi .",
+              "Kết nối mọi lúc mọi nơi, hỗ trợ hơn 60 quốc gia trên thế giới."
+            ],
+            "item": [
+              {
+                "name": "Công nghệ 4G\n tốc độ 75Mbps",
+                "icon": "fa fa-wifi fa-stack-1x fa-inverse",
+                "description": "Hỗ trợ lên đến 6 người truy cập wifi cùng lúc với tốc độ cao, không giới hạn lưu lượng và tốc độ truy cập."
+              },
+              {
+                "name": "Nhận thiết bị tại Việt Nam\n dùng ngay khi tới nước ngoài",
+                "icon": "fa fa-users fa-stack-1x fa-inverse",
+                "description": "Hưởng gói cước rẻ hơn tự thuê khi tới Nhật, chúng tôi khác biệt với nhà cung cấp khác với cùng mức phí thuê."
+              },
+              {
+                "name": "Thiết bị nhỏ gọn\n sử dụng liên tục trong 12h",
+                "icon": "fa fa-tablet fa-stack-1x fa-inverse",
+                "description": "Kích thước nhỏ gọn, không dây nhợ rườm rà, chỉ cần sạc buổi tối để đáp ứng ban ngày sử dụng."
+              }
+            ]
+          },
+          "register": {
+            "title": {
+              "simple": "Làm thế nào để ",
+              "strong": "đăng ký?"
+            },
+            "step": [
+              {
+                "name": "Bước 1",
+                "way": "Đặt & thanh toán online ít nhất trước 5 ngày khởi hành",
+                "image": "assets/img/register/icon-order-1.png"
+              },
+              {
+                "name": "Bước 2",
+                "way": "Thiết bị sẽ được giao ít nhất trước 1 ngày bạn khởi hành",
+                "image": "assets/img/register/icon-order-2.png"
+              },
+              {
+                "name": "Bước 3",
+                "way": "Kết nối Wifi mọi lúc, mọi nơi một cách dễ dàng",
+                "image": "assets/img/register/icon-order-3.png"
+              },
+              {
+                "name": "Bước 4",
+                "way": "Thiết bị sẽ được thu lại sau 1 ngày bạn về",
+                "image": "assets/img/register/icon-order-4.png"
+              }
+            ],
+            "order": "Đặt hàng ngay"
+          },
+          "about": {
+            "title": "Mobifone wifi là gì?"
+          },
+          "price": {
+            "title": "Bảng giá",
+            "personal": {
+              "title": "Khách hàng cá nhân",
+              "thead": {
+                "price": "Giá hàng ngày",
+                "location": "Phạm vi cung cấp"
+              }
+            },
+            "company": {
+              "title": "Khách hàng doanh nghiệp",
+              "thead": {
+                "package": {
+                  "label": "Gói",
+                  "name": "Doanh nghiệp"
+                },
+                "price": "Giá",
+                "period": "Thời hạn",
+                "use": "Số ngày sử dụng"
+              }
+            },
+            "unit": {
+              "day": "ngày",
+              "month": "tháng"
+            }
+          }
+        },
+        "order": {
+          "first": {
+            "title": "Đăng ký",
+            "device": {
+              "title": "Thiết bị",
+              "quantity": "Số lượng"
+            },
+            "requirement": "Thông tin có dấu * là thông tin bắt buộc",
+            "personal": {
+              "title": "Thông tin cá nhân",
+              "firstname": "Họ",
+              "lastname": "Tên",
+              "dob": "Ngày sinh",
+              "email": "Email",
+              "emailConfirm": "Địa chỉ",
+              "phone": "SĐT",
+              "error": "Giá trị không hợp lệ.",
+              "date": {
+                "day": "Ngày",
+                "month": "Tháng",
+                "year": "Năm"
+              }
+            },
+            "promotion": {
+              "title": "Thông tin gói cước",
+              "code": "Mã khuyến mãi",
+              "package": "Gói",
+              "use": "Áp dụng",
+              "cancel": "Hủy",
+              "error": "Mã không hợp lệ hoặc đã hết hạn"
+            },
+            "passport": {
+              "title": "Thông tin CMT/Hộ chiếu",
+              "no": "Số CMT/Hộ chiếu",
+              "place": "Nơi cấp",
+              "date": "Ngày cấp",
+              "error": "Giá trị không hợp lệ",
+              "date_combo": {
+                "day": "Ngày",
+                "month": "Tháng",
+                "year": "Năm"
+              }
+            },
+            "destination": {
+              "title": "Thông tin điểm đến",
+              "location": "Nơi đến",
+              "flight_num": "Flight No.",
+              "schedule": "Arrival Datetime",
+              "start": "Ngày bắt đầu thuê",
+              "end": "Ngày kết thúc",
+              "error": "Giá trị không hợp lệ. Vui lòng thử lại",
+              "option": "--- Lựa chọn điểm đến ---",
+              "protection": {
+                "title": "Phí bảo vệ",
+                "yes": "Có",
+                "no": "Không"
+              },
+              "add": "Thêm",
+              "remove": "Xóa"
+            },
+            "receive": "Nhận thiết bị",
+            "return": "Trả thiết bị",
+            "delivery": {
+              "title": "Giao và nhận thiết bị",
+              "country": "Lựa chọn quốc gia",
+              "receive": {
+                "title": "Địa điểm giao thiết bị",
+                "method": {
+                  "airport": {
+                    "title": "Giao thiết bị tại sân bay",
+                    "label": "Sân bay",
+                    "agent": "Đại lý",
+                    "address": "Địa chỉ",
+                    "option-agency": "---Lựa chọn đại lý---"
+                  },
+                  "city": {
+                    "title": "Nhận thiết bị tại đại lý",
+                    "label": "Tỉnh",
+                    "agent": "Đại lý",
+                    "address": "Địa chỉ",
+                    "option-province": "---Lựa chọn tỉnh---",
+                    "option-agency": "---Lựa chọn đại lý---"
+                  }
+                }
+              },
+              "return": {
+                "title": "Địa điểm trả thiết bị",
+                "method": {
+                  "airport": {
+                    "title": "Trả thiết bị tại sân bay",
+                    "label": "Sân bay",
+                    "agent": "Đại lý",
+                    "address": "Địa chỉ",
+                    "option-agency": "---Lựa chọn đại lý---"
+                  },
+                  "city": {
+                    "title": "Trả thiết bị tại đại lý",
+                    "label": "Tỉnh",
+                    "agent": "Đại lý",
+                    "address": "Địa chỉ",
+                    "option-province": "---Lựa chọn tỉnh---",
+                    "option-agency": "---Lựa chọn đại lý---"
+                  }
+                }
+              }
+            },
+            "term": {
+              "title": "Vui lòng lưu ý các điểm sau",
+              "content": [
+                "Khoản đặt cọc sẽ được trừ vào thẻ của bạn ngay trong ngày hoặc ngày hôm sau. Số tiền này sẽ được hoàn trả vào thẻ ngay khi bạn trả thiết bị.",
+                "Trong trường hợp thiết bị bị mất hoặc hỏng hóc, tiền đặt cọc sẽ không được hoàn trả.",
+                "Thiết bị của chúng tôi chỉ có thể sử dụng ở các quốc gia mà đã cung cấp.",
+                "Không tháo thẻ SIM ra khỏi thiết bị"
+              ],
+              "click": {
+                "begin": "Tôi đồng ý với ",
+                "middle": "điều khoản & điều kiện",
+                "last": " của website"
+              }
+            },
+            "button": "Đặt hàng"
+          },
+          "second": {
+            "heading": "Thông tin đơn hàng",
+            "personal": {
+              "title": "Thông tin cá nhân",
+              "name": "Họ tên",
+              "dob": "Ngày sinh",
+              "phone": "SĐT",
+              "email": "Email",
+              "address": "Địa chỉ",
+              "passport-number": "CMT/Hộ chiếu",
+              "passport-date": "Ngày cấp",
+              "passport-place": "Nơi cấp"
+            },
+            "detail": {
+              "title": "Thông tin chi tiết",
+              "total-price": "Tổng tiền",
+              "rent-price": "Tiền thuê",
+              "protection-fee": "Tiền bảo vệ",
+              "rent-day": "Số ngày thuê",
+              "quantity": "Số lượng thiết bị"
+            },
+            "destination": {
+              "title": "Thông tin điểm đến",
+              "location": "Điểm đến",
+              "start-date": "Ngày bắt đầu",
+              "expired-date": "Ngày kết thúc",
+              "protection": {
+                "title": "Phí bảo vệ",
+                "yes": "Có",
+                "no": "Không"
+              }
+            },
+            "delivery": {
+              "receive": "Thông tin nơi nhận",
+              "return": "Thông tin nơi trả",
+              "name": "Đại lý",
+              "address": "Địa chỉ"
+            },
+            "button": {
+              "back": "Quay lại",
+              "next": "Tiếp tục"
+            },
+            "confirm": {
+              "heading": "Thanh toán",
+              "yes": "Xác nhận",
+              "no": "Hủy bỏ",
+              "fee": "Phí đặt cọc",
+              "deposit": "Đặt cọc online",
+              "no-deposit": "Đặt cọc và nhận thiết bị tại đại lý"
+            }
+          },
+          "result": {
+            "title": "Thông tin đặt hàng",
+            "order": "Mã hóa đơn",
+            "booking": "Người đặt",
+            "phone": "SĐT",
+            "email": "Email",
+            "passport": "CMND",
+            "status": "Kết quả",
+            "button": "Quay về trang chủ"
+          }
+        }
+      },
+      "error": {
+        "required": "Không được để trống. Vui lòng nhập thông tin.",
+        "max-length": "Vượt quá số ký tự cho phép. Vui lòng nhập lại.",
+        "min-length": "Không đủ số ký tự tối thiểu. Vui lòng nhập lại.",
+        "pattern": "Sai định dạng. Vui lòng nhập lại.",
+        "max": "Vượt quá giá trị giới hạn. Vui lòng nhập lại",
+        "min": "Giá trị nhỏ hơn quy định. Vui lòng nhập lại",
+        "invalid": "Hãy điền đủ và đúng thông tin. Vui lòng kiểm tra lại.",
+        "term-click": "Hãy chọn ô \"Đồng ý\" "
+      }
+    },
+  
+    
+  
+    {
+      "header": {
+        "banner": "Contact: 0904123456",
+        "menu": [
+          {
+            "url": "home",
+            "name": "Mobiwifi"
+          },
+          {
+            "url": "home",
+            "name": "Utilities",
+            "target":"instruction"
+          },
+         
+          {
+            "url": "home",
+            "name": "Rates",
+            "target":"price-table"
+          },
+          {
+            "url": "register",
+            "name": "Ordering guide",
+            "target":"register"
+          },
+          
+          {
+            
+            "name": "Information",
+            "submenuinfo": [
+              {
+                "url": "new",
+                "namechil": "News"
+              },
+              {
+                "url": "orderplace",
+                "namechil": "Place of order"
+              },
+              {
+                "url": "faq",
+                "namechil": "Q & A"
+              }
+            ]
+          },
+         
+        
+          {
+            "url": "contact",
+            "name": "Contact"
+          }
+        
+        ]
+      },
+      "footer": {
+        "link": {
+          "link1": {
+            "url": "order",
+            "title": "ORDER"
+          },
+          "link2": {
+            "url": "faq",
+            "title": "FAQS"
+          },
+          "link3": {
+            "url": "contact",
+            "title": "CONTACT US"
+          },
+          "link4": {
+            "url": "",
+            "title": "REVIEWS"
+          },
+          "link5": {
+            "url": "",
+            "title": "ABOUT US"
+          },
+          "link6": {
+            "url": "",
+            "title": "PARTNERS"
+          },
+          "link7": {
+            "url": "",
+            "title": "TERMS & CONDITION"
+          }
+        },
+        "second": "Secured online payment methods",
+        "last": "FOLLOW US"
+      },
+      "app": {
+        "contact": {
+          "title": "Contact us"
+        },
+        "faq": {
+          "title": "FAQS"
+        },
+        "price-table": {
+          "title": "Price table",
+          "topic": "Price table for renting wifi",
+          "price-label": "Price"
+        },
+        "home": {
+          "title": "Homepage",
+          "banner": "assets/banner2.jpg",
+          "buttonorder":"Order",
+          "instruction": {
+            "title": {
+              "simple": "What we ",
+              "strong": "offer?"
+            },
+            "p": [
+              "We offer the solution to get Internet during your trip: Pocket Wifi rental.",
+              "Stay connected anytime and anywhere over 60 countries."
+            ],
+            "item": [
+              {
+                "name": "4G technology \n speed 75Mbps",
+                "icon": "fa fa-wifi fa-stack-1x fa-inverse",
+                "description": "Supports up to 6 simultaneous wifi users at high speed, with unlimited bandwidth and speed."
+            
+              },
+              {
+                "name": "Get equipment in Vietnam \n when you go abroad",
+                "icon": "fa fa-users fa-stack-1x fa-inverse",
+                "description":"When we get to Japan, we are different from other providers at the same rate."
+              },
+              {
+                "name": "Compact device for continuous\n use for 12 hours",
+                "icon": "fa fa-tablet fa-stack-1x fa-inverse",
+                "description":"The compact size, wireless cumbersome, just charging the evening to meet daytime use."
+              }
+            ]
+          },
+          "register": {
+            "title": {
+              "simple": "How it ",
+              "strong": "works?"
+            },
+            "step": [
+              {
+                "name": "Step 1",
+                "way": "Place & pay online at least 5 days before departure.",
+                "image": "assets/img/register/icon-order-1.png"
+              },
+              {
+                "name": "Step 2",
+                "way": "The equipment will be delivered at least 1 day before your departure.",
+                "image": "assets/img/register/icon-order-2.png"
+              },
+              {
+                "name": "Step 3",
+                "way": "Wifi connection anytime, anywhere, easily.",
+                "image": "assets/img/register/icon-order-3.png"
+              },
+              {
+                "name": "Step 4",
+                "way": "The equipment will be returned after 1 day.",
+                "image": "assets/img/register/icon-order-4.png"
+              }
+            ],
+            "order": "Order now"
+          },
+          "about": {
+            "title": "What is Mobifone Wifi?"
+          },
+          "price": {
+            "title": "Price table",
+            "personal": {
+              "title": "Personal Customer",
+              "thead": {
+                "price": "Daily price",
+                "location": "Scope of supply"
+              }
+            },
+            "company": {
+              "title": "Business Customer",
+              "thead": {
+                "package": {
+                  "label": "Package",
+                  "name": "Business"
+                },
+                "price": "Price",
+                "period": "Period",
+                "use": "Days of use"
+              }
+            },
+            "unit": {
+              "day": "days",
+              "month": "months"
+            }
+          }
+        },
+        "order": {
+          "first": {
+            "title": "Order",
+            "device": {
+              "title": "Driver",
+              "quantity": "Quantity"
+            },
+            "requirement": "* Required information",
+            "personal": {
+              "title": "YOUR PERSONAL INFORMATION",
+              "firstname": "Firstname",
+              "lastname": "Lastname",
+              "dob": "Birth",
+              "email": "Email",
+              "emailConfirm": "Address",
+              "phone": "PhoneNumber",
+              "error": "Invalid value.",
+              "date": {
+                "day": "Day",
+                "month": "Month",
+                "year": "Year"
+              }
+            },
+            "promotion": {
+              "title": "Service Pack",
+              "code": "Code",
+              "package": "Package",
+              "use": "Use",
+              "cancel": "Cancel",
+              "error": "Code is incorrect or has been expired"
+            },
+            "passport": {
+              "title": "YOUR PASSPORT INFORMATION",
+              "no": "No",
+              "place": "Place of Issue",
+              "date": "Date of Issue",
+              "error": "Invalidate value.",
+              "date_combo": {
+                "day": "Day",
+                "month": "Month",
+                "year": "Year"
+              }
+            },
+            "destination": {
+              "title": "YOUR DESTINATION INFORMATION",
+              "location": "Destination Country",
+              "flight_num": "Flight No.",
+              "schedule": "Arrival Datetime",
+              "start": "Start date for rental",
+              "end": "Return date for rental",
+              "error": "Invalid value. Please try again",
+              "option": "--- Select location ---",
+              "protection": {
+                "title": "Protection Fee",
+                "yes": "Need",
+                "no": "No need"
+              },
+              "add": "Add more",
+              "remove": "Remove"
+            },
+            "delivery": {
+              "title": "DELIVERY AND RETURN",
+              "country": "Select country",
+              "receive": {
+                "title": "Place for Collection",
+                "method": {
+                  "airport": {
+                    "title": "Collect in airport",
+                    "label": "Airport",
+                    "agent": "Agency",
+                    "address": "Address",
+                    "option-agency": "---Select agency---"
+                  },
+                  "city": {
+                    "title": "Collect device(s) at domestic agency",
+                    "label": "Province",
+                    "agent": "Agency",
+                    "address": "Address",
+                    "option-province": "---Select province---",
+                    "option-agency": "---Select agency---"
+                  }
+                }
+              },
+              "return": {
+                "title": "Place for Return",
+                "method": {
+                  "airport": {
+                    "title": "Return at airport",
+                    "label": "Airport",
+                    "agent": "Agency",
+                    "address": "Address",
+                    "option-agency": "---Select agency---"
+                  },
+                  "city": {
+                    "title": "Return at domestic agency",
+                    "label": "Province",
+                    "agent": "Agency",
+                    "address": "Address",
+                    "option-province": "---Select province---",
+                    "option-agency": "---Select agency---"
+                  }
+                }
+              }
+            },
+            "receive": "Receive driver(s)",
+            "return": "Return driver(s)",
+            "term": {
+              "title": "Kindly take note of the following",
+              "content": [
+                "Deposit USD100 will be charged on the day or the following day to your credit card on the application form. It will be returned to the same credit card upon returning wifi router.",
+                "Please note in case of loss or damage, deposit will not be refunded",
+                "Our device can only be used in the Destination Country. Please do not use it elsewhere",
+                "Please don\"t attempt to remove the SIM card from the device"
+              ],
+              "click": {
+                "begin": "I agree to the ",
+                "middle": "terms and conditions",
+                "last": ""
+              }
+            },
+            "button": "Order"
+          },
+          "second": {
+            "heading": "Order information",
+            "personal": {
+              "title": "Personal information",
+              "name": "Fullname",
+              "dob": "Birthday",
+              "phone": "Mobile",
+              "email": "Email",
+              "address": "Address",
+              "passport-number": "Passport No",
+              "passport-date": "Issue date",
+              "passport-place": "Issue place"
+            },
+            "detail": {
+              "title": "Detail information",
+              "total-price": "Total price",
+              "rent-price": "Rentinig price",
+              "protection-fee": "Protection fee",
+              "rent-day": "Number of days",
+              "quantity": "Quantity"
+            },
+            "destination": {
+              "title": "Destination information",
+              "location": "Country",
+              "start-date": "Start date",
+              "expired-date": "Expired date",
+              "protection": {
+                "title": "Protection fee",
+                "yes": "Yes",
+                "no": "No"
+              }
+            },
+            "delivery": {
+              "receive": "Receive agency",
+              "return": "Return agency",
+              "name": "Agency",
+              "address": "Address"
+            },
+            "button": {
+              "back": "Back",
+              "next": "Next"
+            },
+            "confirm": {
+              "heading": "Pay",
+              "yes": "Yes",
+              "no": "Cancel",
+              "fee": "Deposit price",
+              "deposit": "Pay deposit online",
+              "no-deposit": "Pay deposit and receive drivers in the agency"
+            }
+          },
+          "result": {
+            "title": "Reservation information",
+            "order": "Order ID",
+            "booking": "Order owner",
+            "phone": "Mobile",
+            "email": "Email",
+            "passport": "Passport",
+            "status": "Reserve status",
+            "button": "Back to homepage"
+          }
+        }
+      },
+      "error": {
+        "required": "Required information. Please fill out this field.",
+        "max-length": "Max-length error. Please try again.",
+        "min-length": "Min-length error. Please try again.",
+        "pattern": "Wrong format. Please try again.",
+        "min": "Lower than min value. Please try again",
+        "max": "Greater than max value. Please try again",
+        "invalid": "Invalid value. Please check the entire information.",
+        "term-click": "Please click to \"Agree\" button"
+      },
+      "order":"Order"
+    }
+  ]
+}

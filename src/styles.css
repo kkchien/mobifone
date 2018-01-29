@@ -1,0 +1,233 @@
+/* @import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+@import "../node_modules/font-awesome/css/font-awesome.min.css";
+@import "../node_modules/select2/dist/css/select2.min.css"; */
+
+
+/* @import "./assets/lib/bootstrap-datetimepicker.min.css"; */
+
+
+/* You can add global styles to this file, and also import other style files */
+
+
+/* Font size */
+
+.font-14 {
+  font-size: 14px;
+}
+
+.font-15 {
+  font-size: 15px;
+}
+
+.font-16 {
+  font-size: 16px;
+}
+
+.font-17 {
+  font-size: 17px;
+}
+
+.font-18 {
+  font-size: 18px;
+}
+
+
+/* a tag */
+
+.a-footer>div>div>a {
+  text-decoration: none;
+  color: #777
+}
+
+.footer-color {
+  color: #777;
+}
+
+
+/* Color */
+
+.mbf-color {
+  background-color: #277cbe;
+
+}
+
+body {
+  background-color: #eee;
+  height: 100%;
+}
+
+.container {
+  background-color: #fff !important
+}
+
+#price-table {
+  background-image: url("assets/img/map.png");
+  background-size: 100% 100%;
+  /* opacity: 0.1; */
+}
+
+.container {
+      width: 100%;
+  }
+  @media only screen and (min-width: 320px) and (max-width: 480px){
+    
+    .navbar-brand > img {
+        display: block;
+        width: 58%;
+        margin: -1.5% 5% -11% -8% !important; 
+       
+    }
+  
+    .banner-btn{
+        width: 80%;
+        height: 100%;
+    }
+    .banner-btn a{
+        width: 80%;
+        height: 100%;
+    }
+    .banner-btn a img{
+        width: 60%; 
+       
+    }
+    .navbar-toggle{
+        margin: -10% 21% 1% 0% !important;
+        padding: 2% 1% !important;
+        margin-bottom: 0px !important;
+    }
+    .banner-bnt button{
+        width: 20%;
+        height: 100%;
+    }
+    .logo-language{
+        margin: -29% 0% 1% 60% !important;
+        width: 29% !important;
+        height: 100%;
+    }
+}
+@media only screen and (min-width: 481px) and (max-width: 768px){
+   
+    .navbar-brand > img {
+        display: block;
+        width: 58%;
+        margin: -1.5% 5% -11% -8% !important; 
+    }
+    .banner-btn{
+        width: 80%;
+        height: 100%;
+    }
+    .banner-btn a{
+        width: 80%;
+        height: 100%;
+    }
+    .banner-btn a img{
+        width: 60%; 
+       
+    }
+    .navbar-toggle{
+        margin: -10% 21% 1% 0% !important;
+        padding: 2% 3% !important;
+        margin-bottom: 0px !important;
+    }
+    .banner-bnt button{
+        width: 20%;
+        height: 100%;
+    }
+    .logo-language{
+        margin: -33% 0% 2% 60% !important;
+        width: 26% !important;
+        height: 100%;
+    }
+}
+ 
+@media only screen and (min-width: 768px) and (max-width: 1024px){
+    .main-menu, #sub {
+        font-size: 13.5px;
+        }
+   
+    .banner-bnt{
+        width: 10% !important;
+    }
+    .main-menu{
+        width: 88%;
+       margin-bottom: 1% !important;
+        padding-left:21% !important;
+        margin-top: 4vw !important; 
+    }
+    .navbar-brand > img {
+        display: block;
+        width: 23vw !important;
+        margin: 0vw 1vw -4vw 3vw   !important;
+    }
+    .navbar-brand {
+        height: inherit;
+    }
+    .navbar-main{
+        height: 30% !important;
+    }
+   
+    .logo-language{
+        width: 35px !important;
+    margin: 2vw 4vw -1vw 1vw !important;
+    }
+    .navbar-toggle{
+        margin: -4% 21% 0% 0%;
+        padding: 9px 10px !important;
+        margin-bottom: 0px !important;
+    }
+    .banner-btn{
+        height: inherit;
+    } 
+    .nav > li > a{
+        padding: 10px 6px;
+    }
+    
+}
+ 
+@media only screen and (min-width: 1024px){
+    .main-menu, #sub {
+        font-size: 16px;
+        }
+    .banner-bnt{
+        width: 10% !important;
+    }
+    .logo-language{
+        width: 39px !important;
+    margin: 1.5vw 5vw -3vw 1vw !important;
+    }
+    .main-menu{
+        width: 85%;
+       margin-bottom: 1% !important;
+        padding-left:21% !important;
+        margin-top: 3vw !important; 
+    }
+
+    .navbar-brand > img {
+        display: block;
+        width: 17vw;
+        margin: -0.3vw 1vw -3vw 2vw;
+       
+    }
+    .navbar-brand {
+        height: inherit;
+    }
+    .navbar-main{
+        height: 30% !important;
+    }
+   
+
+    .navbar-toggle{
+        margin: -4% 21% 0% 0%;
+        padding: 9px 10px !important;
+        margin-bottom: 0px !important;
+    }
+    .banner-btn{
+        height: inherit;
+    } 
+    .nav > li > a{
+        padding: 10px 10px;
+    }
+}
+
+
+  

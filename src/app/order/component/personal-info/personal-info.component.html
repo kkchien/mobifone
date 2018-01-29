@@ -1,0 +1,198 @@
+<div *ngIf="formGroup != undefined">
+  <div class="row col-xs-12" [formGroup]="formGroup">
+    <p>
+      <strong class="text-uppercase">{{label.title}}</strong>
+      <span class="text-danger">*</span>
+    </p>
+    <div class="form-group col-xs-12 row" [ngClass]="{'has-feedback':firstNameValidate.valid &&firstNameValidate.touched,
+                    'has-success':firstNameValidate.valid &&firstNameValidate.touched,
+                    'has-error':!firstNameValidate.valid &&firstNameValidate.touched}">
+      <div class="col-sm-2">
+        <label for="">{{label.firstname}}:</label>
+      </div>
+      <div class="col-sm-4">
+        <input type="text" class="form-control" formControlName="firstName">
+        <!-- valid  -->
+        <span [ngClass]="{'glyphicon':firstNameValidate.valid &&firstNameValidate.touched, 
+                          'glyphicon-ok':firstNameValidate.valid &&firstNameValidate.touched, 
+                          'form-control-feedback':firstNameValidate.valid &&firstNameValidate.touched}"></span>
+        <!-- invalid -->
+        <span [ngClass]="{'glyphicon':!firstNameValidate.valid &&firstNameValidate.touched, 
+                          'glyphicon-remove':!firstNameValidate.valid &&firstNameValidate.touched, 
+                          'form-control-feedback':!firstNameValidate.valid &&firstNameValidate.touched}"></span>
+      </div>
+      <div class="col-sm-6 text-danger" *ngIf="!firstNameValidate.valid && firstNameValidate.touched">
+        <span *ngIf="firstNameValidate.errors.required">{{errors['required']}}</span>
+        <span *ngIf="firstNameValidate.errors.maxlength">{{errors['max-length']}}</span>
+      </div>
+      <div class="clearfix"></div>
+
+    </div>
+
+    <div class="form-group col-xs-12 row" [ngClass]="{'has-feedback':lastNameValidate.valid &&lastNameValidate.touched,
+                    'has-success':lastNameValidate.valid &&lastNameValidate.touched,
+                    'has-error':!lastNameValidate.valid &&lastNameValidate.touched}">
+      <div class="col-sm-2">
+        <label for="">{{label.lastname}}:</label>
+      </div>
+      <div class="col-sm-4">
+        <input type="text" class="form-control" formControlName="lastName">
+
+        <span [ngClass]="{'glyphicon':lastNameValidate.valid &&lastNameValidate.touched, 
+                          'glyphicon-ok':lastNameValidate.valid &&lastNameValidate.touched, 
+                          'form-control-feedback':lastNameValidate.valid &&lastNameValidate.touched}"></span>
+        <!-- invalid -->
+        <span [ngClass]="{'glyphicon':!lastNameValidate.valid &&lastNameValidate.touched, 
+                          'glyphicon-remove':!lastNameValidate.valid &&lastNameValidate.touched, 
+                          'form-control-feedback':!lastNameValidate.valid &&lastNameValidate.touched }"></span>
+
+      </div>
+      <div class="col-sm-6 text-danger" *ngIf="!lastNameValidate.valid && lastNameValidate.touched">
+        <span *ngIf="lastNameValidate.errors.required">{{errors['required']}}</span>
+        <span *ngIf="lastNameValidate.errors.maxlength">{{errors['max-length']}}</span>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+    <!-- birth day -->
+    <div class="form-group col-xs-12 row" *ngIf="0" [ngClass]="{'has-feedback':dobValidate.valid &&dobValidate.touched,
+                    'has-success':dobValidate.valid &&dobValidate.touched,
+                    'has-error':!dobValidate.valid &&dobValidate.touched}">
+      <div class="col-sm-2">
+        <label (click)="test()" for="">{{label.dob}}:</label>
+      </div>
+      <div class="col-sm-4">
+        <date-input formControlName="dob" [max-date]="toDay"></date-input>
+        <span [ngClass]="{'glyphicon':dobValidate.valid && dobValidate.touched, 
+                          'glyphicon-ok':dobValidate.valid && dobValidate.touched, 
+                          'form-control-feedback':dobValidate.valid && dobValidate.touched}"></span>
+        <span [ngClass]="{'glyphicon':!dobValidate.valid && dobValidate.touched, 
+                          'glyphicon-remove':!dobValidate.valid && dobValidate.touched , 
+                          'form-control-feedback':!dobValidate.valid && dobValidate.touched }"></span>
+        <span *ngIf='!dobValidate.valid && dobValidate.touched' class="text-danger">{{label.error}}</span>
+      </div>
+      <div class="col-sm-6 text-danger" *ngIf="!dobValidate.valid && dobValidate.touched">
+        {{error}}
+      </div>
+      <div class="clearfix"></div>
+    </div>
+
+    <!-- new DOB -->
+    <div class="form-group col-xs-12 row" formGroupName="date">
+      <div class="col-sm-2">
+        <label>{{label.dob}}:</label>
+      </div>
+      <div class="col-sm-5 row">
+        <div class="col-sm-3 col-xs-4">
+          <select class="form-control"  formControlName="day">
+            <option value="" disabled selected>{{label.date.day}}</option>
+            <option *ngFor="let d of day" [value]="d">{{d}}</option>
+          </select>
+        </div>
+        <div class="col-sm-3 col-xs-4">
+          <select class="form-control"  formControlName="month">
+            <option value="" disabled selected>{{label.date.month}}</option>
+            <option *ngFor="let m of month" [value]="m">{{m}}</option>
+          </select>
+        </div>
+        <div class="col-sm-3 col-xs-4">
+          <select class="form-control"  formControlName="year">
+            <option value="" disabled selected>{{label.date.year}}</option>
+            <option *ngFor="let y of year" [value]="y">{{y}}</option>
+          </select>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+      <div class="col-sm-6 col-sm-offset-2 text-danger" *ngIf="date.touched">
+        <span *ngIf="date.invalid">{{errors.required}}</span>
+        <span *ngIf="date.valid && dateValidate()==false">{{errors.invalid}}</span>
+      </div>
+    </div>
+
+    <div class="form-group col-xs-12 row" [ngClass]="{'has-feedback':addressValidate.valid && addressValidate.touched,
+    'has-success':addressValidate.valid && addressValidate.touched ,
+    'has-error':!addressValidate.valid && addressValidate.touched }">
+      <div class="col-sm-2">
+        <label for="">{{label.emailConfirm}}:</label>
+      </div>
+      <div class="col-sm-4">
+        <input type="text" class="form-control" formControlName="address">
+        <span [ngClass]="{'glyphicon':addressValidate.valid && addressValidate.touched , 
+            'glyphicon-ok':addressValidate.valid && addressValidate.touched , 
+            'form-control-feedback':addressValidate.valid && addressValidate.touched }"></span>
+        <!-- invalid -->
+        <span [ngClass]="{'glyphicon':!addressValidate.valid && addressValidate.touched , 
+            'glyphicon-remove':!addressValidate.valid && addressValidate.touched , 
+            'form-control-feedback':!addressValidate.valid && addressValidate.touched }"></span>
+      </div>
+      <div class="col-sm-6 text-danger" *ngIf="!addressValidate.valid && addressValidate.touched ">
+        <span *ngIf="addressValidate.errors.required">{{errors['required']}}</span>
+        <span *ngIf="addressValidate.errors.maxlength">{{errors['max-length']}}</span>
+      </div>
+      <div class="clearfix"></div>
+
+    </div>
+
+    <div class="form-group col-xs-12 row" [ngClass]="{'has-feedback':emailValidate.valid && emailValidate.touched,
+                    'has-success':emailValidate.valid && emailValidate.touched,
+                    'has-error':!emailValidate.valid && emailValidate.touched}">
+      <div class="col-sm-2">
+        <label for="">{{label.email}}:</label>
+      </div>
+      <div class="col-sm-4">
+        <input type="text" class="form-control" formControlName="email">
+        <span [ngClass]="{'glyphicon':emailValidate.valid && emailValidate.touched, 
+                          'glyphicon-ok':emailValidate.valid && emailValidate.touched, 
+                          'form-control-feedback':emailValidate.valid && emailValidate.touched}"></span>
+        <!-- invalid -->
+        <span [ngClass]="{'glyphicon':!emailValidate.valid && emailValidate.touched, 
+                          'glyphicon-remove':!emailValidate.valid && emailValidate.touched, 
+                          'form-control-feedback':!emailValidate.valid && emailValidate.touched}"></span>
+      </div>
+      <div class="col-sm-6 text-danger" *ngIf="!emailValidate.valid && emailValidate.touched">
+        <span *ngIf="emailValidate.errors.required">{{errors['required']}}</span>
+        <span *ngIf="emailValidate.errors.maxlength">{{errors['max-length']}}</span>
+        <span *ngIf="emailValidate.errors.pattern">{{errors['pattern']}}</span>
+      </div>
+      <div class="clearfix"></div>
+
+    </div>
+
+
+    <div class="form-group col-xs-12 row" [ngClass]="{'has-feedback':phoneValidate.valid && phoneValidate.touched,
+                    'has-success':phoneValidate.valid && phoneValidate.touched,
+                    'has-error':!phoneValidate.valid && phoneValidate.touched}">
+      <div class="col-sm-2">
+        <label for="">{{label.phone}}:</label>
+      </div>
+      <div class="col-sm-4">
+        <input type="text" class="form-control" formControlName="phoneNumber">
+        <span [ngClass]="{'glyphicon':phoneValidate.valid && phoneValidate.touched, 
+                            'glyphicon-ok':phoneValidate.valid && phoneValidate.touched, 
+                            'form-control-feedback':phoneValidate.valid && phoneValidate.touched}"></span>
+        <!-- invalid -->
+        <span [ngClass]="{'glyphicon':!phoneValidate.valid && phoneValidate.touched, 
+                            'glyphicon-remove':!phoneValidate.valid && phoneValidate.touched, 
+                            'form-control-feedback':!phoneValidate.valid && phoneValidate.touched}"></span>
+        <!-- </div> -->
+      </div>
+      <div class="col-sm-6 text-danger" *ngIf="!phoneValidate.valid && phoneValidate.touched">
+        <span *ngIf="phoneValidate.errors.required">{{errors['required']}}</span>
+        <span *ngIf="phoneValidate.errors.maxlength">{{errors['max-length']}}
+          <</span>
+            <span *ngIf="phoneValidate.errors.pattern && !phoneValidate.errors.maxlength">{{errors['pattern']}}</span>
+      </div>
+      <div class="clearfix"></div>
+
+    </div>
+
+    <div class="col-xs-12 row">
+      <hr>
+    </div>
+
+  </div>
+
+  <!-- <div class="col-xs-12">
+    <pre>{{formGroup.value | json}}</pre>
+  </div> -->
+
+</div>

@@ -1,0 +1,119 @@
+<div id="passprt-information" class="row col-xs-12" [formGroup]="formGroup">
+  <p class="passport-title"><strong class="text-uppercase">{{label.title}}</strong>
+    <span class="text-danger">*</span>
+  </p>
+  <!-- <form action="" class="row"> -->
+  <div class="form-group col-xs-12 row" [ngClass]="{'has-feedback':passNoValidate.valid || passNoValidate.touched,
+                        'has-success':passNoValidate.valid &&passNoValidate.touched,
+                        'has-error':!passNoValidate.valid &&passNoValidate.touched}">
+    <div class="col-sm-2">
+      <label for="">{{label.no}}:</label>
+    </div>
+    <div class="col-sm-4">
+      <input type="text" class="form-control" formControlName="passportNo">
+      <span [ngClass]="{'glyphicon':passNoValidate.valid &&passNoValidate.touched, 
+            'glyphicon-ok':passNoValidate.valid &&passNoValidate.touched, 
+            'form-control-feedback':passNoValidate.valid &&passNoValidate.touched}"></span>
+      <!-- invalid -->
+      <span [ngClass]="{'glyphicon':!passNoValidate.valid &&passNoValidate.touched, 
+            'glyphicon-remove':!passNoValidate.valid &&passNoValidate.touched, 
+            'form-control-feedback':!passNoValidate.valid &&passNoValidate.touched}"></span>
+    </div>
+    <div class="col-sm-6 text-danger" *ngIf="!passNoValidate.valid && passNoValidate.touched">
+        <span *ngIf="passNoValidate.errors.required">{{errors['required']}}</span>
+        <span *ngIf="passNoValidate.errors.maxlength">{{errors['max-length']}}</span>
+        <span *ngIf="passNoValidate.errors.pattern && !passNoValidate.errors.maxlength">{{errors['pattern']}}</span>
+    </div>
+    <div class="clear-fix"></div>
+
+  </div>
+
+  <!-- release location -->
+  <div class="form-group col-xs-12 row" [ngClass]="{'has-feedback':passPlaceValidate.valid || passPlaceValidate.touched,
+                      'has-success':passPlaceValidate.valid &&passPlaceValidate.touched,
+                      'has-error':!passPlaceValidate.valid &&passPlaceValidate.touched}">
+    <div class="col-sm-2">
+      <label for="">{{label.place}}:</label>
+    </div>
+    <div class="col-sm-4">
+        <!-- <select name="" id="" class="form-control country-select" formControlName="placeIssue">
+          <option *ngFor="let y of country">
+            {{y}}
+          </option>
+        </select> -->
+        <input type="text" class="form-control" formControlName="placeIssue">
+        <span [ngClass]="{'glyphicon':passPlaceValidate.valid &&passPlaceValidate.touched, 
+              'glyphicon-ok':passPlaceValidate.valid &&passPlaceValidate.touched, 
+              'form-control-feedback':passPlaceValidate.valid &&passPlaceValidate.touched}"></span>
+        <!-- invalid -->
+        <span [ngClass]="{'glyphicon':!passPlaceValidate.valid &&passPlaceValidate.touched, 
+              'glyphicon-remove':!passPlaceValidate.valid &&passPlaceValidate.touched, 
+              'form-control-feedback':!passPlaceValidate.valid &&passPlaceValidate.touched}"></span>
+    </div>
+    <div class="col-sm-6 text-danger" *ngIf="!passPlaceValidate.valid && passPlaceValidate.touched">
+      <span *ngIf="passPlaceValidate.errors.required">{{errors['required']}}</span>
+    </div>
+    <div class="clearfix"></div>
+
+  </div>
+
+  <!-- release date -->
+  <div class="form-group col-xs-12 row" [ngClass]="{'has-feedback':passDateValidate.valid,
+                      'has-success':passDateValidate.valid ,
+                      'has-error':!passDateValidate.valid }" [hidden]="true">
+    <div class="col-sm-2">
+      <label for="">{{label.date}}:</label>
+    </div>
+    <div class="col-sm-4">
+      <!-- <input type="text" class="form-control " id="pass_date" formControlName="dateIssue" /> -->
+      <date-input formControlName="dateIssue" [max-date]="today"></date-input>
+      <span [ngClass]="{'glyphicon':passDateValidate.valid , 
+      'glyphicon-ok':passDateValidate.valid , 
+      'form-control-feedback':passDateValidate.valid }"></span>
+<span [ngClass]="{'glyphicon':!passDateValidate.valid , 
+      'glyphicon-remove':!passDateValidate.valid , 
+      'form-control-feedback':!passDateValidate.valid }"></span>
+    </div>
+    <div class="col-sm-6 text-danger" *ngIf="!passDateValidate.valid && passDateValidate.touched">
+      {{error}}
+    </div>
+    <div class="clearfix"></div>
+  </div>
+
+  <div class="form-group col-xs-12 row" formGroupName="date" >
+    <div class="col-sm-2" (click)="getDOB()" >
+      <label>{{label.date}}:</label>
+    </div>
+    <div class="col-sm-5 row">
+      <div class="col-sm-3 col-xs-4">
+        <select class="form-control"  formControlName="day">
+          <option value="" disabled selected>{{label.date_combo.day}}</option>
+          <option *ngFor="let d of day" [value]="d">{{d}}</option>
+        </select>
+      </div>
+      <div class="col-sm-3 col-xs-4">
+        <select class="form-control"  formControlName="month">
+          <option value="" disabled selected>{{label.date_combo.month}}</option>
+          <option *ngFor="let m of month" [value]="m">{{m}}</option>
+        </select>
+      </div>
+      <div class="col-sm-3 col-xs-4">
+        <select class="form-control"  formControlName="year">
+          <option value="" disabled selected>{{label.date_combo.year}}</option>
+          <option *ngFor="let y of year" [value]="y">{{y}}</option>
+        </select>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+    <div class="col-sm-6 col-sm-offset-2 text-danger" *ngIf="date.touched">
+      <span *ngIf="date.invalid">{{errors.required}}</span>
+      <span *ngIf="date.valid && dateValidate()==false">{{errors.invalid}}</span>
+    </div>
+  </div>
+  <div class="col-xs-12 row">
+    <hr>
+  </div>
+</div>
+<!-- <div class="col-xs-12">
+  <pre>{{formGroup.value | json}}</pre>
+</div> -->

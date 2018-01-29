@@ -1,0 +1,67 @@
+.mbf-color{
+    position: relative;
+}
+.mobibanner{
+    display: block;
+    position: relative;
+    overflow: hidden;
+    
+}
+.mbf-color a{
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    z-index: 1;
+    /* width: 10%; */
+    
+}
+/* .row-instruction, .row-register{
+    padding-top: 40px;
+    padding-bottom: 40px;
+} */
+.row-instruction, .row-register{
+    background: rgb(196, 231, 240);
+    margin-right: 0px; 
+    margin-left: 0px; 
+    /* padding-right: 40px; */
+    /* padding-left: 40px; */
+    padding-top:60px;
+
+}
+.row-register{
+    background: rgb(245, 234, 234);
+    padding-bottom: 20px;
+}
+
+.head{
+    background-color: #0970c5;
+    padding: 1.5rem;
+    font-size: 25px;
+    font-weight: 600;
+  
+}
+.head strong{
+    color: #fff;
+}
+
+.content{
+    background: #fff;
+    font-size: 15px;
+    height: 200px;
+}
+.content img{
+    height: 60%;
+}
+.content p{
+    padding: 10px;
+    height: 20%;
+}
+
+.row-register hr, .row-instruction hr{
+    width: 20%;
+    border-bottom: 1px solid rgb(32, 32, 32);
+    float: left;
+}
+hr{
+    margin-top:0px !important;
+}

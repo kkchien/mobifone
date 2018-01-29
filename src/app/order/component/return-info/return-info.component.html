@@ -1,0 +1,76 @@
+<div class="form-group col-sm-11 col-sm-offset-1" [formGroup]="formGroup">
+
+  <!-- hotel Address -->
+  <div class="row form-group" [ngClass]="{'has-feedback':hotelAddress.valid && hotelAddress.touched,
+                                                                'has-success':hotelAddress.valid && hotelAddress.touched,
+                                                              'has-error':!hotelAddress.valid && hotelAddress.touched }">
+    <div class="col-sm-2">
+      <label for="center-block">{{ label.city }}:</label>
+    </div>
+    <div class="col-sm-6  col-xs-9">
+      <input type="text" class="form-control" formControlName="hotelAddress">
+      <span [ngClass]="{'glyphicon':hotelAddress.valid && hotelAddress.touched, 
+                                                                    'glyphicon-ok':hotelAddress.valid && hotelAddress.touched, 
+                                                                    'form-control-feedback':hotelAddress.valid && hotelAddress.touched}"></span>
+      <!-- invalid -->
+      <span [ngClass]="{'glyphicon':!hotelAddress.valid && hotelAddress.touched, 
+                                                                    'glyphicon-remove':!hotelAddress.valid && hotelAddress.touched, 
+                                                                    'form-control-feedback':!hotelAddress.valid && hotelAddress.touched}"></span>
+    </div>
+  </div>
+
+  <!-- hotel Name -->
+  <div class="row form-group" [ngClass]="{'has-feedback':hotelName.valid && hotelName.touched,
+                                                                'has-success':hotelName.valid && hotelName.touched,
+                                                              'has-error':!hotelName.valid && hotelName.touched }">
+    <div class="col-sm-2">
+      <label for="center-block">{{ label.agent }}:</label>
+    </div>
+    <div class="col-sm-6  col-xs-9">
+      <input type="text" class="form-control" formControlName="hotelName">
+      <span [ngClass]="{'glyphicon':hotelName.valid && hotelName.touched, 
+                                                                    'glyphicon-ok':hotelName.valid && hotelName.touched, 
+                                                                    'form-control-feedback':hotelName.valid && hotelName.touched}"></span>
+      <!-- invalid -->
+      <span [ngClass]="{'glyphicon':!hotelName.valid && hotelName.touched, 
+                                                                    'glyphicon-remove':!hotelName.valid && hotelName.touched, 
+                                                                    'form-control-feedback':!hotelName.valid && hotelName.touched}"></span>
+    </div>
+  </div>
+
+  <!-- booking name -->
+  <!-- <div class="row form-group" [ngClass]="{'has-feedback':bookingName.valid && bookingName.touched,
+                                                                'has-success':bookingName.valid && bookingName.touched,
+                                                              'has-error':!bookingName.valid && bookingName.touched }">
+    <div class="col-sm-2">
+      <label for="center-block">{{ label.bookingName }}:</label>
+    </div>
+    <div class="col-sm-6  col-xs-9">
+      <input type="text" class="form-control" formControlName="bookingName">
+      <span [ngClass]="{'glyphicon':bookingName.valid && bookingName.touched, 
+                                                                    'glyphicon-ok':bookingName.valid && bookingName.touched, 
+                                                                    'form-control-feedback':bookingName.valid && bookingName.touched}"></span>
+      <span [ngClass]="{'glyphicon':!bookingName.valid && bookingName.touched, 
+                                                                    'glyphicon-remove':!bookingName.valid && bookingName.touched, 
+                                                                    'form-control-feedback':!bookingName.valid && bookingName.touched}"></span>
+    </div>
+  </div> -->
+
+  <!-- departure time -->
+  <!-- <div class="row form-group" [ngClass]="{'has-feedback':departureTime.valid && departureTime.touched,
+                                                                'has-success':departureTime.valid && departureTime.touched,
+                                                              'has-error':!departureTime.valid && departureTime.touched }">
+    <div class="col-sm-2">
+      <label for="center-block">{{ label.departure }}:</label>
+    </div>
+    <div class="col-sm-6  col-xs-9">
+      <input type="text" class="form-control" formControlName="departureTime">
+      <span [ngClass]="{'glyphicon':departureTime.valid && departureTime.touched, 
+                                                                    'glyphicon-ok':departureTime.valid && departureTime.touched, 
+                                                                    'form-control-feedback':departureTime.valid && departureTime.touched}"></span>
+      <span [ngClass]="{'glyphicon':!departureTime.valid && departureTime.touched, 
+                                                                    'glyphicon-remove':!departureTime.valid && departureTime.touched, 
+                                                                    'form-control-feedback':!departureTime.valid && departureTime.touched}"></span>
+    </div>
+  </div> -->
+</div>

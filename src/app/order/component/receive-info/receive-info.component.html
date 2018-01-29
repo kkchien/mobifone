@@ -1,0 +1,124 @@
+<div class="form-group col-sm-12" [formGroup]="formGroup">
+  <!-- AIRPORT -->
+  <div class="row">
+    <div class="col-xs-12">
+      <!-- </div>
+        <div class="col-xs-2"> -->
+      <label>
+        <input type="radio" value="0" (click)="changeMethod('0')" formControlName="method"> &nbsp; {{ label.airport.title }}
+      </label>
+    </div>
+  </div>
+  <div class="col-xs-12" *ngIf="method=='0'">
+    <!-- hotel Address -->
+    <div *ngIf="0" class="row form-group" [ngClass]="{'has-feedback':airport.valid && airport.touched,  'has-success':airport.valid && airport.touched,
+                                              'has-error':!airport.valid && airport.touched }">
+      <div class="col-sm-2">
+        <label>{{ label.airport.label }}:</label>
+      </div>
+      <div class="col-sm-6">
+        <input type="text" class="form-control" formControlName="airport">
+        <span [ngClass]="{'glyphicon':airport.valid && airport.touched, 
+      'glyphicon-ok':airport.valid && airport.touched, 
+      'form-control-feedback':airport.valid && airport.touched}"></span>
+        <!-- invalid -->
+        <span [ngClass]="{'glyphicon':!airport.valid && airport.touched, 
+      'glyphicon-remove':!airport.valid && airport.touched, 
+      'form-control-feedback':!airport.valid && airport.touched}"></span>
+      </div>
+      <div class="col-md-6 col-xs-12 text-danger" *ngIf="!airport.valid && airport.touched">
+        <span *ngIf="airport.errors.required">{{errors['required']}}</span>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+
+    <!-- hotel Name -->
+    <div class="row form-group" [ngClass]="{'has-feedback':agent1.valid && agent1.touched,'has-success':agent1.valid && agent1.touched,
+                                            'has-error':!agent1.valid && agent1.touched }">
+      <div class="col-sm-2">
+        <label>{{ label.airport.agent }}:</label>
+      </div>
+      <div class="col-sm-4">
+        <select name="" id="" class="form-control country-select" formControlName="agent1">
+          <option value="" disabled selected>{{label.airport['option-agency']}}</option>
+          <option *ngFor="let y of airports" [value]="y.agencyId">
+            <strong>{{y.name}}</strong>
+          </option>
+        </select>
+        <span [ngClass]="{'glyphicon':agent1.valid && agent1.touched, 
+      'glyphicon-ok':agent1.valid && agent1.touched, 
+      'form-control-feedback':agent1.valid && agent1.touched}"></span>
+        <!-- invalid -->
+        <span [ngClass]="{'glyphicon':!agent1.valid && agent1.touched, 
+      'glyphicon-remove':!agent1.valid && agent1.touched, 
+      'form-control-feedback':!agent1.valid && agent1.touched}"></span>
+      </div>
+      <div class="col-sm-6 text-danger" *ngIf="!agent1.valid && agent1.touched">
+        <span *ngIf="agent1.errors.required">{{errors['required']}}</span>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+  <div class="clearfix"></div>
+  <!-- AGENT -->
+  <div class="row">
+    <div class="col-xs-12">
+      <label>
+        <input type="radio" value="1" (click)="changeMethod('1')" formControlName="method"> &nbsp; {{ label.city.title }}
+      </label>
+    </div>
+  </div>
+  <div class="col-xs-12" *ngIf="method =='1'">
+    <!-- booking name -->
+    <div class="row form-group" [ngClass]="{'has-feedback':city.valid && city.touched,'has-success':city.valid && city.touched,'has-error':!city.valid && city.touched }">
+      <div class="col-sm-2">
+        <label for="center-block">{{ label.city.label }}:</label>
+      </div>
+      <div class="col-sm-4">
+        <select (change)="getAgency(city.value)" class="form-control country-select" formControlName="city">
+          <option value="" disabled selected>{{label.city['option-province']}}</option>
+          <option *ngFor="let y of provinces" [value]="y.areaId">
+            <strong>{{y.name}}</strong>
+          </option>
+        </select>
+        <span [ngClass]="{'glyphicon':city.valid && city.touched, 
+      'glyphicon-ok':city.valid && city.touched, 
+      'form-control-feedback':city.valid && city.touched}"></span>
+        <span [ngClass]="{'glyphicon':!city.valid && city.touched, 
+      'glyphicon-remove':!city.valid && city.touched, 
+      'form-control-feedback':!city.valid && city.touched}"></span>
+      </div>
+      <div class="col-md-6 text-danger" *ngIf="!city.valid && city.touched">
+        <span *ngIf="city.errors.required">{{errors['required']}}</span>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+
+    <!-- departure time -->
+    <div class="row form-group" *ngIf="agency.length > 0" [ngClass]="{'has-feedback':agent2.valid && agent2.touched,'has-success':agent2.valid && agent2.touched,'has-error':!agent2.valid && agent2.touched }">
+      <div class="col-sm-2">
+        <label for="center-block">{{ label.city.agent }}:</label>
+      </div>
+      <div class="col-sm-4">
+        <select class="form-control country-select" formControlName="agent2">
+          <option value="" disabled selected>{{label.city['option-agency']}}</option>
+          <option *ngFor="let y of agency" [value]="y.agencyId">
+            <strong>{{y.name + ' - ' + y.address}}</strong>
+          </option>
+        </select>
+        <span [ngClass]="{'glyphicon':agent2.valid && agent2.touched, 
+      'glyphicon-ok':agent2.valid && agent2.touched, 
+      'form-control-feedback':agent2.valid && agent2.touched}"></span>
+        <span [ngClass]="{'glyphicon':!agent2.valid && agent2.touched, 
+      'glyphicon-remove':!agent2.valid && agent2.touched, 
+      'form-control-feedback':!agent2.valid && agent2.touched}"></span>
+      </div>
+      <div class="col-md-6 text-danger" *ngIf="!agent2.valid && agent2.touched">
+        <span *ngIf="agent2.errors.required">{{errors['required']}}</span>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</div>
+
+<p></p>

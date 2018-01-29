@@ -1,0 +1,5 @@
+0: Don moi
+1: Don dang thue
+2: Don da hoan thanh
+3: Don da huy
+4: Don thanh toan online khong thanh cong

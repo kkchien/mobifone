@@ -1,0 +1,864 @@
+<div class="container" *ngIf="0">
+  <!-- <ol class="">
+    <li>
+      <a href="#">Trang chủ</a>
+    </li>
+    <li class="active">
+      <a href="#">Đăng ký</a>
+    </li>
+  </ol> -->
+  <div class="col-xs-12">
+    <div class="col-xs-12 row">
+      <hr>
+    </div>
+    <div class="col-xs-12 row">
+      <p class="text-danger text-uppercase">Dấu * là thông tin bắt buộc nhập</p>
+
+    </div>
+
+    <form [formGroup]="myForm" (submit)="order()">
+      <!-- Personal information -->
+      <div id="personal-information" class="row col-xs-12" formGroupName="personal">
+        <p>THÔNG TIN CÁ NHÂN CỦA BẠN
+          <span class="text-danger">*</span>
+        </p>
+        <div class="form-group col-xs-12 row" 
+            [ngClass]="{'has-feedback':firstNameValidate.valid &&firstNameValidate.touched,
+                        'has-success':firstNameValidate.valid &&firstNameValidate.touched,
+                        'has-error':!firstNameValidate.valid &&firstNameValidate.touched}">
+          <div class="col-sm-2">
+            <label for="">Họ:</label>
+          </div>
+          <div class="col-sm-9">
+            <input type="text" class="form-control" formControlName="firstName">
+            <!-- valid  -->
+            <span [ngClass]="{'glyphicon':firstNameValidate.valid &&firstNameValidate.touched, 
+                              'glyphicon-ok':firstNameValidate.valid &&firstNameValidate.touched, 
+                              'form-control-feedback':firstNameValidate.valid &&firstNameValidate.touched}"></span>
+            <!-- invalid -->
+            <span [ngClass]="{'glyphicon':!firstNameValidate.valid &&firstNameValidate.touched, 
+                              'glyphicon-remove':!firstNameValidate.valid &&firstNameValidate.touched, 
+                              'form-control-feedback':!firstNameValidate.valid &&firstNameValidate.touched}"></span>
+          </div>
+
+        </div>
+
+        <div class="form-group col-xs-12 row" 
+            [ngClass]="{'has-feedback':lastNameValidate.valid &&lastNameValidate.touched,
+                        'has-success':lastNameValidate.valid &&lastNameValidate.touched,
+                        'has-error':!lastNameValidate.valid &&lastNameValidate.touched}">
+          <div class="col-sm-2">
+            <label for="">Tên:</label>
+          </div>
+          <div class="col-sm-9">
+            <input type="text" class="form-control" formControlName="lastName">
+
+            <span [ngClass]="{'glyphicon':lastNameValidate.valid &&lastNameValidate.touched, 
+                              'glyphicon-ok':lastNameValidate.valid &&lastNameValidate.touched, 
+                              'form-control-feedback':lastNameValidate.valid &&lastNameValidate.touched}"></span>
+            <!-- invalid -->
+            <span [ngClass]="{'glyphicon':!lastNameValidate.valid &&lastNameValidate.touched, 
+                              'glyphicon-remove':!lastNameValidate.valid &&lastNameValidate.touched, 
+                              'form-control-feedback':!lastNameValidate.valid &&lastNameValidate.touched }"></span>
+
+          </div>
+
+        </div>
+        <!-- birth day -->
+        <div class="form-group col-xs-12 row" 
+            [ngClass]="{'has-feedback':dobValidate.valid &&dobValidate.touched,
+                        'has-success':dobValidate.valid &&dobValidate.touched,
+                        'has-error':!dobValidate.valid &&dobValidate.touched}">
+          <div class="col-sm-2">
+            <label for="">Ngày sinh:</label>
+          </div>
+          <div class="col-sm-4">
+            <input ng2-datetime-picker date-only="true" class="form-control" formControlName="dob" />
+            <span [ngClass]="{'glyphicon':dobValidate.valid &&dobValidate.touched, 
+                              'glyphicon-ok':dobValidate.valid &&dobValidate.touched, 
+                              'form-control-feedback':dobValidate.valid &&dobValidate.touched}"></span>
+            <!-- invalid -->
+            <span [ngClass]="{'glyphicon':!dobValidate.valid &&dobValidate.touched, 
+                              'glyphicon-remove':!dobValidate.valid &&dobValidate.touched, 
+                              'form-control-feedback':!dobValidate.valid &&dobValidate.touched}"></span>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+
+        <div class="form-group col-xs-12 row" 
+            [ngClass]="{'has-feedback':emailValidate.valid && emailValidate.touched,
+                        'has-success':emailValidate.valid && emailValidate.touched,
+                        'has-error':!emailValidate.valid && emailValidate.touched}">
+          <div class="col-sm-2">
+            <label for="">Địa chỉ email:</label>
+          </div>
+          <div class="col-sm-9">
+            <input type="text" class="form-control" formControlName="email">
+            <span [ngClass]="{'glyphicon':emailValidate.valid && emailValidate.touched, 
+                              'glyphicon-ok':emailValidate.valid && emailValidate.touched, 
+                              'form-control-feedback':emailValidate.valid && emailValidate.touched}"></span>
+            <!-- invalid -->
+            <span [ngClass]="{'glyphicon':!emailValidate.valid && emailValidate.touched, 
+                              'glyphicon-remove':!emailValidate.valid && emailValidate.touched, 
+                              'form-control-feedback':!emailValidate.valid && emailValidate.touched}"></span>
+          </div>
+
+        </div>
+        <div class="form-group col-xs-12 row" 
+          [ngClass]="{'has-feedback':confirmValidate.valid && confirmValidate.touched,
+                      'has-success':confirmValidate.valid && confirmValidate.touched,
+                      'has-error':!confirmValidate.valid && confirmValidate.touched}">
+          <div class="col-sm-2">
+            <label for="">Xác nhận địa chỉ email:</label>
+          </div>
+          <div class="col-sm-9">
+            <input type="text" class="form-control" formControlName="emailConfirm">
+            <span [ngClass]="{'glyphicon':confirmValidate.valid && confirmValidate.touched, 
+                              'glyphicon-ok':confirmValidate.valid && confirmValidate.touched, 
+                              'form-control-feedback':confirmValidate.valid && confirmValidate.touched}"></span>
+            <!-- invalid -->
+            <span [ngClass]="{'glyphicon':!confirmValidate.valid && confirmValidate.touched, 
+                              'glyphicon-remove':!confirmValidate.valid && confirmValidate.touched, 
+                              'form-control-feedback':!confirmValidate.valid && confirmValidate.touched}"></span>
+          </div>
+
+        </div>
+
+        <div class="form-group col-xs-12 row" 
+            [ngClass]="{'has-feedback':phoneValidate.valid && phoneValidate.touched,
+                        'has-success':phoneValidate.valid && phoneValidate.touched,
+                        'has-error':!phoneValidate.valid && phoneValidate.touched}">
+              <div class="col-sm-2">
+            <label for="">Số di động:</label>
+          </div>
+          <div class="col-sm-4">
+            <!-- <div class="col-xs-1">+</div> -->
+            <!-- <div class="col-xs-3 col-sm-1">
+              <input type="text" class="form-control">
+            </div> -->
+            <!-- <div class="col-sm-5 col-xs-8"> -->
+              <input type="text" class="form-control" formControlName="phoneNumber">
+              <span [ngClass]="{'glyphicon':phoneValidate.valid && phoneValidate.touched, 
+                                'glyphicon-ok':phoneValidate.valid && phoneValidate.touched, 
+                                'form-control-feedback':phoneValidate.valid && phoneValidate.touched}"></span>
+              <!-- invalid -->
+              <span [ngClass]="{'glyphicon':!phoneValidate.valid && phoneValidate.touched, 
+                                'glyphicon-remove':!phoneValidate.valid && phoneValidate.touched, 
+                                'form-control-feedback':!phoneValidate.valid && phoneValidate.touched}"></span>
+            <!-- </div> -->
+          </div>
+
+        </div>
+
+
+        <!-- </form> -->
+        <div class="col-xs-12 row">
+          <hr>
+        </div>
+      </div>
+      <!-- End Personal information -->
+
+      <!-- passprt information -->
+      <div id="passprt-information" class="row col-xs-12" formGroupName="passport">
+        <p>THÔNG TIN HỘ CHIẾU CỦA BẠN
+          <span class="text-danger">*</span>
+        </p>
+        <!-- <form action="" class="row"> -->
+        <div class="form-group col-xs-12 row" 
+            [ngClass]="{'has-feedback':passNoValidate.valid &&passNoValidate.touched,
+                        'has-success':passNoValidate.valid &&passNoValidate.touched,
+                        'has-error':!passNoValidate.valid &&passNoValidate.touched}">
+          <div class="col-sm-2">
+            <label for="">Hộ chiếu số:</label>
+          </div>
+          <div class="col-sm-4">
+            <input type="text" class="form-control" formControlName="passportNo">
+            <span [ngClass]="{'glyphicon':passNoValidate.valid &&passNoValidate.touched, 
+            'glyphicon-ok':passNoValidate.valid &&passNoValidate.touched, 
+            'form-control-feedback':passNoValidate.valid &&passNoValidate.touched}"></span>
+            <!-- invalid -->
+            <span [ngClass]="{'glyphicon':!passNoValidate.valid &&passNoValidate.touched, 
+            'glyphicon-remove':!passNoValidate.valid &&passNoValidate.touched, 
+            'form-control-feedback':!passNoValidate.valid &&passNoValidate.touched}"></span>
+          </div>
+          <div class="clear-fix"></div>
+
+        </div>
+
+        <!-- release location -->
+        <div class="form-group col-xs-12 row" 
+          [ngClass]="{'has-feedback':passPlaceValidate.valid &&passPlaceValidate.touched,
+                      'has-success':passPlaceValidate.valid &&passPlaceValidate.touched,
+                      'has-error':!passPlaceValidate.valid &&passPlaceValidate.touched}">
+          <div class="col-sm-2">
+            <label for="">Nơi cấp:</label>
+          </div>
+          <div class="col-sm-9">
+            <div class="col-sm-4 row">
+              <select name="" id="" class="form-control country-select" formControlName="placeIssue">
+                <option *ngFor="let y of country">
+                  {{y}}
+                </option>
+              </select>
+              <span [ngClass]="{'glyphicon':passPlaceValidate.valid &&passPlaceValidate.touched, 
+              'glyphicon-ok':passPlaceValidate.valid &&passPlaceValidate.touched, 
+              'form-control-feedback':passPlaceValidate.valid &&passPlaceValidate.touched}"></span>
+<!-- invalid -->
+<span [ngClass]="{'glyphicon':!passPlaceValidate.valid &&passPlaceValidate.touched, 
+              'glyphicon-remove':!passPlaceValidate.valid &&passPlaceValidate.touched, 
+              'form-control-feedback':!passPlaceValidate.valid &&passPlaceValidate.touched}"></span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- release date -->
+        <div class="form-group col-xs-12 row" 
+          [ngClass]="{'has-feedback':passDateValidate.valid &&passDateValidate.touched,
+                      'has-success':passDateValidate.valid &&passDateValidate.touched,
+                      'has-error':!passDateValidate.valid &&passDateValidate.touched}">
+          <div class="col-sm-2">
+            <label for="">Ngày cấp:</label>
+          </div>
+          <div class="col-sm-4">
+            <input ng2-datetime-picker date-only="true" class="form-control" formControlName="dateIssue" />
+            <span [ngClass]="{'glyphicon':passDateValidate.valid &&passDateValidate.touched, 
+            'glyphicon-ok':passDateValidate.valid &&passDateValidate.touched, 
+            'form-control-feedback':passDateValidate.valid &&passDateValidate.touched}"></span>
+<!-- invalid -->
+<span [ngClass]="{'glyphicon':!passDateValidate.valid &&passDateValidate.touched, 
+            'glyphicon-remove':!passDateValidate.valid &&passDateValidate.touched, 
+            'form-control-feedback':!passDateValidate.valid &&passDateValidate.touched}"></span>
+          </div>
+          <div class="clearfix"></div>
+
+        </div>
+
+        <!-- confirm email -->
+        <!-- <div class="form-group col-xs-12 row">
+          <div class="col-sm-2">
+            <label for="">Xác nhận địa chỉ email:</label>
+          </div>
+          <div class="col-sm-9">
+            <input type="text" class="form-control">
+          </div>
+
+        </div> -->
+        <!-- </form> -->
+        <div class="col-xs-12 row">
+          <hr>
+        </div>
+      </div>
+      <!-- End passprt information -->
+
+      <!-- device -->
+      <div id="device-number" class="row col-xs-12">
+        <p>THÔNG TIN THIẾT BỊ
+          <span class="text-danger">*</span>
+        </p>
+        <!-- quantity -->
+        <div class="form-group col-xs-12 row" 
+          [ngClass]="{'has-feedback':myForm.controls.device.valid && myForm.controls.device.touched,
+                      'has-success':myForm.controls.device.valid && myForm.controls.device.touched,
+                      'has-error':!myForm.controls.device.valid && myForm.controls.device.touched }">
+          <div class="col-sm-2">
+            <label for="">Số lượng:</label>
+          </div>
+          <div class="col-sm-2">
+            <input type="text" class="form-control" formControlName="device">
+            <span [ngClass]="{'glyphicon':myForm.controls.device.valid && myForm.controls.device.touched, 
+                              'glyphicon-ok':myForm.controls.device.valid && myForm.controls.device.touched, 
+                              'form-control-feedback':myForm.controls.device.valid && myForm.controls.device.touched}"></span>
+            <!-- invalid -->
+            <span [ngClass]="{'glyphicon':!myForm.controls.device.valid && myForm.controls.device.touched, 
+                              'glyphicon-remove':!myForm.controls.device.valid && myForm.controls.device.touched, 
+                              'form-control-feedback':!myForm.controls.device.valid && myForm.controls.device.touched}"></span>
+          </div>
+        </div>
+        <div class="col-xs-12 row">
+          <hr>
+        </div>
+      </div>
+      <!-- End device -->
+
+      <!-- destination information -->
+      <div id="destination-information" class="row col-xs-12">
+
+
+
+        <div formArrayName="destination">
+          <div class="" *ngFor="let des of destinations.controls; let i=index" [formGroupName]="i">
+            <p> THÔNG TIN ĐIỂM ĐẾN
+              <span *ngIf="i > 0">{{i+1}}</span>
+              <span class="text-danger">*</span>
+              <a *ngIf="i > 0" href="javascript:void(0)" (click)="removeDestination(i)">Remmove</a>
+            </p>
+            <!-- destination location -->
+            <div class="form-group col-xs-12 row">
+              <div class="col-sm-2">
+                <label for="">Nơi đến:</label>
+              </div>
+              <div class="col-sm-9">
+                <div class="col-sm-4 row">
+                  <select name="" id="" class="form-control country-select" formControlName="location">
+                    <option *ngFor="let y of country">
+                      {{y}}
+                    </option>
+                  </select>
+                </div>
+              </div>
+              <div class="clearfix"></div>
+            </div>
+
+            <!-- address -->
+            <!-- <div class="form-group col-xs-12 row">
+              <div class="col-sm-2">
+                <label for="">Địa chỉ:</label>
+              </div>
+              <div class="col-sm-9">
+                <input type="text" class="form-control">
+              </div>
+            </div> -->
+
+            <!-- flight no -->
+            <div class="form-group col-xs-12 row">
+              <div class="col-sm-2">
+                <label for="">Chuyến bay số:</label>
+              </div>
+              <div class="col-sm-2">
+                <input type="text" class="form-control">
+              </div>
+            </div>
+
+            <!-- departed date -->
+            <div class="form-group col-xs-12 row">
+              <div class="col-sm-2">
+                <label for="">Lịch bay:</label>
+              </div>
+              <div class="col-sm-4">
+                <input ng2-datetime-picker class="form-control" />
+              </div>
+              <div class="clearfix"></div>
+            </div>
+
+            <!-- start  date -->
+            <div class="form-group col-xs-12 row">
+              <div class="col-sm-2">
+                <label for="">Ngày bắt đầu thuê:</label>
+              </div>
+              <div class="col-sm-4">
+                <input ng2-datetime-picker date-only="true" class="form-control" />
+              </div>
+              <div class="clearfix"></div>
+            </div>
+
+            <!-- expire date -->
+            <div class="form-group col-xs-12 row">
+              <div class="col-sm-2">
+                <label for="">Ngày hết hạn thuê:</label>
+              </div>
+              <div class="col-sm-4">
+                <input ng2-datetime-picker date-only="true" class="form-control" />
+              </div>
+              <div class="clearfix"></div>
+            </div>
+
+
+
+            <!-- protected -->
+            <div class="form-group col-xs-12 row">
+              <div class="col-sm-2">
+                <label for="">Phí bảo vệ:</label>
+              </div>
+              <div class="col-sm-6 row">
+                <div class="col-sm-3 row">
+                  <div class="col-xs-12">
+                    <label class="center-block">
+                      <input type="radio" value="1" formControlName="protected"> Cần</label>
+                  </div>
+                </div>
+
+                <div class="col-sm-6 row">
+                  <div class="col-xs-9">
+                    <label class="center-block">
+                      <input type="radio" value="2" formControlName="protected"> Không cần</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="col-xs-12">
+            <button class="btn btn-danger" (click)="addDestination()">Thêm địa điểm đến</button>
+          </div>
+          <div class="col-xs-12 row">
+            <hr>
+          </div>
+        </div>
+      </div>
+      <!-- End destination information -->
+
+      <!-- ship information -->
+      <div id="ship-information" class="row col-xs-12">
+        <p>GIAO HÀNG VÀ TRẢ HÀNG
+          <span class="text-danger">*</span>
+        </p>
+
+        <!-- information -->
+
+        <div class="">
+          <div class="form-group col-xs-12 row">
+            <!-- <div class="clearfix"></div> -->
+            <div class="col-sm-2">
+              <label for="">Chọn quốc gia</label>
+            </div>
+            <div class="col-sm-3">
+              <select name="" id="country" class="" class="form-control">
+                <option value="VN">Viet Nam</option>
+                <option value="SIG">Singapore</option>
+              </select>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+
+          <div class="form-group col-xs-12 row">
+            <div class="col-xs-12">
+              <label for="">Phòng giao dịch</label>
+            </div>
+            <div class="col-xs-12">
+
+              <!-- outside city -->
+              <div class="row">
+                <div class="col-xs-10">
+                  * Giao hàng đến địa chỉ của bạn tại Tp. Hồ Chí Minh.
+                </div>
+                <div class="col-xs-2">
+                  <input type="radio" name="" id="" value="1" formControlName="receiveMethod">
+                </div>
+                <!-- receive address -->
+                <div class="form-group col-sm-11 col-sm-offset-1" formGroupName="receive" *ngIf="myForm.controls.receiveMethod.value=='1'">
+
+                  <!-- hotel Address -->
+                  <div class="row form-group" [ngClass]="{'has-feedback':myForm.controls.receive.controls.hotelAddress.valid && myForm.controls.receive.controls.hotelAddress.touched,
+                  'has-success':myForm.controls.receive.controls.hotelAddress.valid && myForm.controls.receive.controls.hotelAddress.touched,
+                'has-error':!myForm.controls.receive.controls.hotelAddress.valid && myForm.controls.receive.controls.hotelAddress.touched }">
+                    <div class="col-sm-2">
+                      <label for="center-block">Địa chỉ khách sạn:</label>
+                    </div>
+                    <div class="col-sm-6  col-xs-9">
+                      <input type="text" class="form-control" formControlName="hotelAddress">
+                      <span [ngClass]="{'glyphicon':myForm.controls.receive.controls.hotelAddress.valid && myForm.controls.receive.controls.hotelAddress.touched, 
+                      'glyphicon-ok':myForm.controls.receive.controls.hotelAddress.valid && myForm.controls.receive.controls.hotelAddress.touched, 
+                      'form-control-feedback':myForm.controls.receive.controls.hotelAddress.valid && myForm.controls.receive.controls.hotelAddress.touched}"></span>
+                      <!-- invalid -->
+                      <span [ngClass]="{'glyphicon':!myForm.controls.receive.controls.hotelAddress.valid && myForm.controls.receive.controls.hotelAddress.touched, 
+                      'glyphicon-remove':!myForm.controls.receive.controls.hotelAddress.valid && myForm.controls.receive.controls.hotelAddress.touched, 
+                      'form-control-feedback':!myForm.controls.receive.controls.hotelAddress.valid && myForm.controls.receive.controls.hotelAddress.touched}"></span>
+                    </div>
+                  </div>
+
+                  <!-- hotel Name -->
+                  <div class="row form-group" [ngClass]="{'has-feedback':myForm.controls.receive.controls.hotelName.valid && myForm.controls.receive.controls.hotelName.touched,
+                  'has-success':myForm.controls.receive.controls.hotelName.valid && myForm.controls.receive.controls.hotelName.touched,
+                'has-error':!myForm.controls.receive.controls.hotelName.valid && myForm.controls.receive.controls.hotelName.touched }">
+                    <div class="col-sm-2">
+                      <label for="center-block">Tên khách sạn:</label>
+                    </div>
+                    <div class="col-sm-6  col-xs-9">
+                      <input type="text" class="form-control" formControlName="hotelName">
+                      <span [ngClass]="{'glyphicon':myForm.controls.receive.controls.hotelName.valid && myForm.controls.receive.controls.hotelName.touched, 
+                      'glyphicon-ok':myForm.controls.receive.controls.hotelName.valid && myForm.controls.receive.controls.hotelName.touched, 
+                      'form-control-feedback':myForm.controls.receive.controls.hotelName.valid && myForm.controls.receive.controls.hotelName.touched}"></span>
+                      <!-- invalid -->
+                      <span [ngClass]="{'glyphicon':!myForm.controls.receive.controls.hotelName.valid && myForm.controls.receive.controls.hotelName.touched, 
+                      'glyphicon-remove':!myForm.controls.receive.controls.hotelName.valid && myForm.controls.receive.controls.hotelName.touched, 
+                      'form-control-feedback':!myForm.controls.receive.controls.hotelName.valid && myForm.controls.receive.controls.hotelName.touched}"></span>
+                    </div>
+                  </div>
+
+                  <!-- booking name -->
+                  <div class="row form-group" [ngClass]="{'has-feedback':myForm.controls.receive.controls.bookingName.valid && myForm.controls.receive.controls.bookingName.touched,
+                  'has-success':myForm.controls.receive.controls.bookingName.valid && myForm.controls.receive.controls.bookingName.touched,
+                'has-error':!myForm.controls.receive.controls.bookingName.valid && myForm.controls.receive.controls.bookingName.touched }">
+                    <div class="col-sm-2">
+                      <label for="center-block">Người đặt:</label>
+                    </div>
+                    <div class="col-sm-6  col-xs-9">
+                      <input type="text" class="form-control" formControlName="bookingName">
+                      <span [ngClass]="{'glyphicon':myForm.controls.receive.controls.bookingName.valid && myForm.controls.receive.controls.bookingName.touched, 
+                      'glyphicon-ok':myForm.controls.receive.controls.bookingName.valid && myForm.controls.receive.controls.bookingName.touched, 
+                      'form-control-feedback':myForm.controls.receive.controls.bookingName.valid && myForm.controls.receive.controls.bookingName.touched}"></span>
+                      <!-- invalid -->
+                      <span [ngClass]="{'glyphicon':!myForm.controls.receive.controls.bookingName.valid && myForm.controls.receive.controls.bookingName.touched, 
+                      'glyphicon-remove':!myForm.controls.receive.controls.bookingName.valid && myForm.controls.receive.controls.bookingName.touched, 
+                      'form-control-feedback':!myForm.controls.receive.controls.bookingName.valid && myForm.controls.receive.controls.bookingName.touched}"></span>
+                    </div>
+                  </div>
+
+                  <!-- departure time -->
+                  <div class="row form-group" [ngClass]="{'has-feedback':myForm.controls.receive.controls.departureTime.valid && myForm.controls.receive.controls.departureTime.touched,
+                  'has-success':myForm.controls.receive.controls.departureTime.valid && myForm.controls.receive.controls.departureTime.touched,
+                'has-error':!myForm.controls.receive.controls.departureTime.valid && myForm.controls.receive.controls.departureTime.touched }">
+                    <div class="col-sm-2">
+                      <label for="center-block">Giờ khởi hành:</label>
+                    </div>
+                    <div class="col-sm-6  col-xs-9">
+                      <input type="text" class="form-control" formControlName="departureTime">
+                      <span [ngClass]="{'glyphicon':myForm.controls.receive.controls.departureTime.valid && myForm.controls.receive.controls.departureTime.touched, 
+                      'glyphicon-ok':myForm.controls.receive.controls.departureTime.valid && myForm.controls.receive.controls.departureTime.touched, 
+                      'form-control-feedback':myForm.controls.receive.controls.departureTime.valid && myForm.controls.receive.controls.departureTime.touched}"></span>
+                      <!-- invalid -->
+                      <span [ngClass]="{'glyphicon':!myForm.controls.receive.controls.departureTime.valid && myForm.controls.receive.controls.departureTime.touched, 
+                      'glyphicon-remove':!myForm.controls.receive.controls.departureTime.valid && myForm.controls.receive.controls.departureTime.touched, 
+                      'form-control-feedback':!myForm.controls.receive.controls.departureTime.valid && myForm.controls.receive.controls.departureTime.touched}"></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- in the city -->
+              <div class="row">
+                <div class="col-xs-10">
+                  * Giao hàng đến địa chỉ của bạn tại các tỉnh thành ngoài Tp. Hồ Chí Minh.
+                </div>
+                <div class="col-xs-2">
+                  <input type="radio" name="" id="" value="2" formControlName="receiveMethod">
+                </div>
+
+                <!-- receive address -->
+                <div class="form-group col-sm-11 col-sm-offset-1" formGroupName="receive" *ngIf="myForm.controls.receiveMethod.value=='2'">
+
+                  <!-- hotel Address -->
+                  <div class="row form-group" [ngClass]="{'has-feedback':myForm.controls.receive.controls.hotelAddress.valid && myForm.controls.receive.controls.hotelAddress.touched,
+                                      'has-success':myForm.controls.receive.controls.hotelAddress.valid && myForm.controls.receive.controls.hotelAddress.touched,
+                                    'has-error':!myForm.controls.receive.controls.hotelAddress.valid && myForm.controls.receive.controls.hotelAddress.touched }">
+                    <div class="col-sm-2">
+                      <label for="center-block">Địa chỉ khách sạn:</label>
+                    </div>
+                    <div class="col-sm-6  col-xs-9">
+                      <input type="text" class="form-control" formControlName="hotelAddress">
+                      <span [ngClass]="{'glyphicon':myForm.controls.receive.controls.hotelAddress.valid && myForm.controls.receive.controls.hotelAddress.touched, 
+                                          'glyphicon-ok':myForm.controls.receive.controls.hotelAddress.valid && myForm.controls.receive.controls.hotelAddress.touched, 
+                                          'form-control-feedback':myForm.controls.receive.controls.hotelAddress.valid && myForm.controls.receive.controls.hotelAddress.touched}"></span>
+                      <!-- invalid -->
+                      <span [ngClass]="{'glyphicon':!myForm.controls.receive.controls.hotelAddress.valid && myForm.controls.receive.controls.hotelAddress.touched, 
+                                          'glyphicon-remove':!myForm.controls.receive.controls.hotelAddress.valid && myForm.controls.receive.controls.hotelAddress.touched, 
+                                          'form-control-feedback':!myForm.controls.receive.controls.hotelAddress.valid && myForm.controls.receive.controls.hotelAddress.touched}"></span>
+                    </div>
+                  </div>
+
+                  <!-- hotel Name -->
+                  <div class="row form-group" [ngClass]="{'has-feedback':myForm.controls.receive.controls.hotelName.valid && myForm.controls.receive.controls.hotelName.touched,
+                                      'has-success':myForm.controls.receive.controls.hotelName.valid && myForm.controls.receive.controls.hotelName.touched,
+                                    'has-error':!myForm.controls.receive.controls.hotelName.valid && myForm.controls.receive.controls.hotelName.touched }">
+                    <div class="col-sm-2">
+                      <label for="center-block">Tên khách sạn:</label>
+                    </div>
+                    <div class="col-sm-6  col-xs-9">
+                      <input type="text" class="form-control" formControlName="hotelName">
+                      <span [ngClass]="{'glyphicon':myForm.controls.receive.controls.hotelName.valid && myForm.controls.receive.controls.hotelName.touched, 
+                                          'glyphicon-ok':myForm.controls.receive.controls.hotelName.valid && myForm.controls.receive.controls.hotelName.touched, 
+                                          'form-control-feedback':myForm.controls.receive.controls.hotelName.valid && myForm.controls.receive.controls.hotelName.touched}"></span>
+                      <!-- invalid -->
+                      <span [ngClass]="{'glyphicon':!myForm.controls.receive.controls.hotelName.valid && myForm.controls.receive.controls.hotelName.touched, 
+                                          'glyphicon-remove':!myForm.controls.receive.controls.hotelName.valid && myForm.controls.receive.controls.hotelName.touched, 
+                                          'form-control-feedback':!myForm.controls.receive.controls.hotelName.valid && myForm.controls.receive.controls.hotelName.touched}"></span>
+                    </div>
+                  </div>
+
+                  <!-- booking name -->
+                  <div class="row form-group" [ngClass]="{'has-feedback':myForm.controls.receive.controls.bookingName.valid && myForm.controls.receive.controls.bookingName.touched,
+                                      'has-success':myForm.controls.receive.controls.bookingName.valid && myForm.controls.receive.controls.bookingName.touched,
+                                    'has-error':!myForm.controls.receive.controls.bookingName.valid && myForm.controls.receive.controls.bookingName.touched }">
+                    <div class="col-sm-2">
+                      <label for="center-block">Người đặt:</label>
+                    </div>
+                    <div class="col-sm-6  col-xs-9">
+                      <input type="text" class="form-control" formControlName="bookingName">
+                      <span [ngClass]="{'glyphicon':myForm.controls.receive.controls.bookingName.valid && myForm.controls.receive.controls.bookingName.touched, 
+                                          'glyphicon-ok':myForm.controls.receive.controls.bookingName.valid && myForm.controls.receive.controls.bookingName.touched, 
+                                          'form-control-feedback':myForm.controls.receive.controls.bookingName.valid && myForm.controls.receive.controls.bookingName.touched}"></span>
+                      <!-- invalid -->
+                      <span [ngClass]="{'glyphicon':!myForm.controls.receive.controls.bookingName.valid && myForm.controls.receive.controls.bookingName.touched, 
+                                          'glyphicon-remove':!myForm.controls.receive.controls.bookingName.valid && myForm.controls.receive.controls.bookingName.touched, 
+                                          'form-control-feedback':!myForm.controls.receive.controls.bookingName.valid && myForm.controls.receive.controls.bookingName.touched}"></span>
+                    </div>
+                  </div>
+
+                  <!-- departure time -->
+                  <div class="row form-group" [ngClass]="{'has-feedback':myForm.controls.receive.controls.departureTime.valid && myForm.controls.receive.controls.departureTime.touched,
+                                      'has-success':myForm.controls.receive.controls.departureTime.valid && myForm.controls.receive.controls.departureTime.touched,
+                                    'has-error':!myForm.controls.receive.controls.departureTime.valid && myForm.controls.receive.controls.departureTime.touched }">
+                    <div class="col-sm-2">
+                      <label for="center-block">Giờ khởi hành:</label>
+                    </div>
+                    <div class="col-sm-6  col-xs-9">
+                      <input type="text" class="form-control" formControlName="departureTime">
+                      <span [ngClass]="{'glyphicon':myForm.controls.receive.controls.departureTime.valid && myForm.controls.receive.controls.departureTime.touched, 
+                                          'glyphicon-ok':myForm.controls.receive.controls.departureTime.valid && myForm.controls.receive.controls.departureTime.touched, 
+                                          'form-control-feedback':myForm.controls.receive.controls.departureTime.valid && myForm.controls.receive.controls.departureTime.touched}"></span>
+                      <!-- invalid -->
+                      <span [ngClass]="{'glyphicon':!myForm.controls.receive.controls.departureTime.valid && myForm.controls.receive.controls.departureTime.touched, 
+                                          'glyphicon-remove':!myForm.controls.receive.controls.departureTime.valid && myForm.controls.receive.controls.departureTime.touched, 
+                                          'form-control-feedback':!myForm.controls.receive.controls.departureTime.valid && myForm.controls.receive.controls.departureTime.touched}"></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- at office -->
+              <div class="row">
+                <div class="col-xs-10">
+                  * Nhận thiết bị tại văn phòng chúng tôi.
+                </div>
+                <div class="col-xs-2">
+                  <input type="radio" name="" id="" value="3" formControlName="receiveMethod">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group col-xs-12 row">
+            <div class="col-xs-12">
+              <label for="">Địa điểm trả hàng</label>
+            </div>
+            <div class="col-xs-12">
+
+              <div class="row">
+                <div class="col-xs-10">
+                  * Nhận lại thiết bị tại nhà/ khách sạn tại Tp. Hồ Chí Minh.
+                </div>
+                <div class="col-xs-2">
+                  <input type="radio" name="" id="" value="1" formControlName="returnMethod">
+                </div>
+
+                <!-- return address -->
+                <div class="form-group col-sm-11 col-sm-offset-1" formGroupName="return" *ngIf="myForm.controls.returnMethod.value=='1'">
+
+                  <!-- hotel Address -->
+                  <div class="row form-group" [ngClass]="{'has-feedback':myForm.controls.receive.controls.hotelAddress.valid && myForm.controls.receive.controls.hotelAddress.touched,
+                                      'has-success':myForm.controls.receive.controls.hotelAddress.valid && myForm.controls.receive.controls.hotelAddress.touched,
+                                    'has-error':!myForm.controls.receive.controls.hotelAddress.valid && myForm.controls.receive.controls.hotelAddress.touched }">
+                    <div class="col-sm-2">
+                      <label for="center-block">Địa chỉ khách sạn:</label>
+                    </div>
+                    <div class="col-sm-6  col-xs-9">
+                      <input type="text" class="form-control" formControlName="hotelAddress">
+                      <span [ngClass]="{'glyphicon':myForm.controls.receive.controls.hotelAddress.valid && myForm.controls.receive.controls.hotelAddress.touched, 
+                                          'glyphicon-ok':myForm.controls.receive.controls.hotelAddress.valid && myForm.controls.receive.controls.hotelAddress.touched, 
+                                          'form-control-feedback':myForm.controls.receive.controls.hotelAddress.valid && myForm.controls.receive.controls.hotelAddress.touched}"></span>
+                      <!-- invalid -->
+                      <span [ngClass]="{'glyphicon':!myForm.controls.receive.controls.hotelAddress.valid && myForm.controls.receive.controls.hotelAddress.touched, 
+                                          'glyphicon-remove':!myForm.controls.receive.controls.hotelAddress.valid && myForm.controls.receive.controls.hotelAddress.touched, 
+                                          'form-control-feedback':!myForm.controls.receive.controls.hotelAddress.valid && myForm.controls.receive.controls.hotelAddress.touched}"></span>
+                    </div>
+                  </div>
+
+                  <!-- hotel Name -->
+                  <div class="row form-group" [ngClass]="{'has-feedback':myForm.controls.receive.controls.hotelName.valid && myForm.controls.receive.controls.hotelName.touched,
+                                      'has-success':myForm.controls.receive.controls.hotelName.valid && myForm.controls.receive.controls.hotelName.touched,
+                                    'has-error':!myForm.controls.receive.controls.hotelName.valid && myForm.controls.receive.controls.hotelName.touched }">
+                    <div class="col-sm-2">
+                      <label for="center-block">Tên khách sạn:</label>
+                    </div>
+                    <div class="col-sm-6  col-xs-9">
+                      <input type="text" class="form-control" formControlName="hotelName">
+                      <span [ngClass]="{'glyphicon':myForm.controls.receive.controls.hotelName.valid && myForm.controls.receive.controls.hotelName.touched, 
+                                          'glyphicon-ok':myForm.controls.receive.controls.hotelName.valid && myForm.controls.receive.controls.hotelName.touched, 
+                                          'form-control-feedback':myForm.controls.receive.controls.hotelName.valid && myForm.controls.receive.controls.hotelName.touched}"></span>
+                      <!-- invalid -->
+                      <span [ngClass]="{'glyphicon':!myForm.controls.receive.controls.hotelName.valid && myForm.controls.receive.controls.hotelName.touched, 
+                                          'glyphicon-remove':!myForm.controls.receive.controls.hotelName.valid && myForm.controls.receive.controls.hotelName.touched, 
+                                          'form-control-feedback':!myForm.controls.receive.controls.hotelName.valid && myForm.controls.receive.controls.hotelName.touched}"></span>
+                    </div>
+                  </div>
+
+                  <!-- booking name -->
+                  <div class="row form-group" [ngClass]="{'has-feedback':myForm.controls.receive.controls.bookingName.valid && myForm.controls.receive.controls.bookingName.touched,
+                                      'has-success':myForm.controls.receive.controls.bookingName.valid && myForm.controls.receive.controls.bookingName.touched,
+                                    'has-error':!myForm.controls.receive.controls.bookingName.valid && myForm.controls.receive.controls.bookingName.touched }">
+                    <div class="col-sm-2">
+                      <label for="center-block">Người đặt:</label>
+                    </div>
+                    <div class="col-sm-6  col-xs-9">
+                      <input type="text" class="form-control" formControlName="bookingName">
+                      <span [ngClass]="{'glyphicon':myForm.controls.receive.controls.bookingName.valid && myForm.controls.receive.controls.bookingName.touched, 
+                                          'glyphicon-ok':myForm.controls.receive.controls.bookingName.valid && myForm.controls.receive.controls.bookingName.touched, 
+                                          'form-control-feedback':myForm.controls.receive.controls.bookingName.valid && myForm.controls.receive.controls.bookingName.touched}"></span>
+                      <!-- invalid -->
+                      <span [ngClass]="{'glyphicon':!myForm.controls.receive.controls.bookingName.valid && myForm.controls.receive.controls.bookingName.touched, 
+                                          'glyphicon-remove':!myForm.controls.receive.controls.bookingName.valid && myForm.controls.receive.controls.bookingName.touched, 
+                                          'form-control-feedback':!myForm.controls.receive.controls.bookingName.valid && myForm.controls.receive.controls.bookingName.touched}"></span>
+                    </div>
+                  </div>
+
+                  <!-- departure time -->
+                  <div class="row form-group" [ngClass]="{'has-feedback':myForm.controls.receive.controls.departureTime.valid && myForm.controls.receive.controls.departureTime.touched,
+                                      'has-success':myForm.controls.receive.controls.departureTime.valid && myForm.controls.receive.controls.departureTime.touched,
+                                    'has-error':!myForm.controls.receive.controls.departureTime.valid && myForm.controls.receive.controls.departureTime.touched }">
+                    <div class="col-sm-2">
+                      <label for="center-block">Giờ khởi hành:</label>
+                    </div>
+                    <div class="col-sm-6  col-xs-9">
+                      <input type="text" class="form-control" formControlName="departureTime">
+                      <span [ngClass]="{'glyphicon':myForm.controls.return.controls.departureTime.valid && myForm.controls.return.controls.departureTime.touched, 
+                                          'glyphicon-ok':myForm.controls.return.controls.departureTime.valid && myForm.controls.return.controls.departureTime.touched, 
+                                          'form-control-feedback':myForm.controls.return.controls.departureTime.valid && myForm.controls.return.controls.departureTime.touched}"></span>
+                      <!-- invalid -->
+                      <span [ngClass]="{'glyphicon':!myForm.controls.return.controls.departureTime.valid && myForm.controls.return.controls.departureTime.touched, 
+                                          'glyphicon-remove':!myForm.controls.return.controls.departureTime.valid && myForm.controls.return.controls.departureTime.touched, 
+                                          'form-control-feedback':!myForm.controls.return.controls.departureTime.valid && myForm.controls.return.controls.departureTime.touched}"></span>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="row">
+                <div class="col-xs-10">
+                  * Nhận lại thiết bị tại nhà/ khách sạn tại tỉnh thành ngoài Tp. Hồ Chí Minh.
+                </div>
+                <div class="col-xs-2">
+                  <input type="radio" value="2" formControlName="returnMethod">
+                </div>
+
+                <!-- return address -->
+                <div class="form-group col-sm-11 col-sm-offset-1" formGroupName="return" *ngIf="myForm.controls.returnMethod.value=='2'">
+                    
+                                      <!-- hotel Address -->
+                                      <div class="row form-group" [ngClass]="{'has-feedback':myForm.controls.receive.controls.hotelAddress.valid && myForm.controls.receive.controls.hotelAddress.touched,
+                                                          'has-success':myForm.controls.receive.controls.hotelAddress.valid && myForm.controls.receive.controls.hotelAddress.touched,
+                                                        'has-error':!myForm.controls.receive.controls.hotelAddress.valid && myForm.controls.receive.controls.hotelAddress.touched }">
+                                        <div class="col-sm-2">
+                                          <label for="center-block">Địa chỉ khách sạn:</label>
+                                        </div>
+                                        <div class="col-sm-6  col-xs-9">
+                                          <input type="text" class="form-control" formControlName="hotelAddress">
+                                          <span [ngClass]="{'glyphicon':myForm.controls.receive.controls.hotelAddress.valid && myForm.controls.receive.controls.hotelAddress.touched, 
+                                                              'glyphicon-ok':myForm.controls.receive.controls.hotelAddress.valid && myForm.controls.receive.controls.hotelAddress.touched, 
+                                                              'form-control-feedback':myForm.controls.receive.controls.hotelAddress.valid && myForm.controls.receive.controls.hotelAddress.touched}"></span>
+                                          <!-- invalid -->
+                                          <span [ngClass]="{'glyphicon':!myForm.controls.receive.controls.hotelAddress.valid && myForm.controls.receive.controls.hotelAddress.touched, 
+                                                              'glyphicon-remove':!myForm.controls.receive.controls.hotelAddress.valid && myForm.controls.receive.controls.hotelAddress.touched, 
+                                                              'form-control-feedback':!myForm.controls.receive.controls.hotelAddress.valid && myForm.controls.receive.controls.hotelAddress.touched}"></span>
+                                        </div>
+                                      </div>
+                    
+                                      <!-- hotel Name -->
+                                      <div class="row form-group" [ngClass]="{'has-feedback':myForm.controls.receive.controls.hotelName.valid && myForm.controls.receive.controls.hotelName.touched,
+                                                          'has-success':myForm.controls.receive.controls.hotelName.valid && myForm.controls.receive.controls.hotelName.touched,
+                                                        'has-error':!myForm.controls.receive.controls.hotelName.valid && myForm.controls.receive.controls.hotelName.touched }">
+                                        <div class="col-sm-2">
+                                          <label for="center-block">Tên khách sạn:</label>
+                                        </div>
+                                        <div class="col-sm-6  col-xs-9">
+                                          <input type="text" class="form-control" formControlName="hotelName">
+                                          <span [ngClass]="{'glyphicon':myForm.controls.receive.controls.hotelName.valid && myForm.controls.receive.controls.hotelName.touched, 
+                                                              'glyphicon-ok':myForm.controls.receive.controls.hotelName.valid && myForm.controls.receive.controls.hotelName.touched, 
+                                                              'form-control-feedback':myForm.controls.receive.controls.hotelName.valid && myForm.controls.receive.controls.hotelName.touched}"></span>
+                                          <!-- invalid -->
+                                          <span [ngClass]="{'glyphicon':!myForm.controls.receive.controls.hotelName.valid && myForm.controls.receive.controls.hotelName.touched, 
+                                                              'glyphicon-remove':!myForm.controls.receive.controls.hotelName.valid && myForm.controls.receive.controls.hotelName.touched, 
+                                                              'form-control-feedback':!myForm.controls.receive.controls.hotelName.valid && myForm.controls.receive.controls.hotelName.touched}"></span>
+                                        </div>
+                                      </div>
+                    
+                                      <!-- booking name -->
+                                      <div class="row form-group" [ngClass]="{'has-feedback':myForm.controls.receive.controls.bookingName.valid && myForm.controls.receive.controls.bookingName.touched,
+                                                          'has-success':myForm.controls.receive.controls.bookingName.valid && myForm.controls.receive.controls.bookingName.touched,
+                                                        'has-error':!myForm.controls.receive.controls.bookingName.valid && myForm.controls.receive.controls.bookingName.touched }">
+                                        <div class="col-sm-2">
+                                          <label for="center-block">Người đặt:</label>
+                                        </div>
+                                        <div class="col-sm-6  col-xs-9">
+                                          <input type="text" class="form-control" formControlName="bookingName">
+                                          <span [ngClass]="{'glyphicon':myForm.controls.receive.controls.bookingName.valid && myForm.controls.receive.controls.bookingName.touched, 
+                                                              'glyphicon-ok':myForm.controls.receive.controls.bookingName.valid && myForm.controls.receive.controls.bookingName.touched, 
+                                                              'form-control-feedback':myForm.controls.receive.controls.bookingName.valid && myForm.controls.receive.controls.bookingName.touched}"></span>
+                                          <!-- invalid -->
+                                          <span [ngClass]="{'glyphicon':!myForm.controls.receive.controls.bookingName.valid && myForm.controls.receive.controls.bookingName.touched, 
+                                                              'glyphicon-remove':!myForm.controls.receive.controls.bookingName.valid && myForm.controls.receive.controls.bookingName.touched, 
+                                                              'form-control-feedback':!myForm.controls.receive.controls.bookingName.valid && myForm.controls.receive.controls.bookingName.touched}"></span>
+                                        </div>
+                                      </div>
+                    
+                                      <!-- departure time -->
+                                      <div class="row form-group" [ngClass]="{'has-feedback':myForm.controls.receive.controls.departureTime.valid && myForm.controls.receive.controls.departureTime.touched,
+                                                          'has-success':myForm.controls.receive.controls.departureTime.valid && myForm.controls.receive.controls.departureTime.touched,
+                                                        'has-error':!myForm.controls.receive.controls.departureTime.valid && myForm.controls.receive.controls.departureTime.touched }">
+                                        <div class="col-sm-2">
+                                          <label for="center-block">Giờ khởi hành:</label>
+                                        </div>
+                                        <div class="col-sm-6  col-xs-9">
+                                          <input type="text" class="form-control" formControlName="departureTime">
+                                          <span [ngClass]="{'glyphicon':myForm.controls.receive.controls.departureTime.valid && myForm.controls.receive.controls.departureTime.touched, 
+                                                              'glyphicon-ok':myForm.controls.receive.controls.departureTime.valid && myForm.controls.receive.controls.departureTime.touched, 
+                                                              'form-control-feedback':myForm.controls.receive.controls.departureTime.valid && myForm.controls.receive.controls.departureTime.touched}"></span>
+                                          <!-- invalid -->
+                                          <span [ngClass]="{'glyphicon':!myForm.controls.receive.controls.departureTime.valid && myForm.controls.receive.controls.departureTime.touched, 
+                                                              'glyphicon-remove':!myForm.controls.receive.controls.departureTime.valid && myForm.controls.receive.controls.departureTime.touched, 
+                                                              'form-control-feedback':!myForm.controls.receive.controls.departureTime.valid && myForm.controls.receive.controls.departureTime.touched}"></span>
+                                        </div>
+                                      </div>
+                                    </div>
+
+              </div>
+
+              <div class="row">
+                <div class="col-xs-10">
+                  * Gửi đến văn phòng chúng tôi.
+                </div>
+                <div class="col-xs-2">
+                  <input type="radio" name="" id="" value="3" formControlName="returnMethod">
+                </div>
+
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+        <!-- end infomation -->
+        <div class="col-xs-12">
+          <hr>
+        </div>
+      </div>
+      <div id="terms" class="col-xs-12">
+        <div class="form-group col-xs-12 row">
+          <label for="">Vui lòng lưu ý các điểm sau:</label>
+          <div class="col-xs-12">
+            <p>- Deposit USD100 will be charged on the day or the following day to your credit card on the application form.
+              It will be returned to the same credit card upon returning wifi router.</p>
+            <p>- Please note in case of loss or damage, deposit will not be refunded</p>
+            <p>- Our device can only be used in the Destination Country. Please do not use it elsewhere.</p>
+            <p>- Please don't attempt to remove the SIM card from the device.</p>
+          </div>
+        </div>
+        <div class="form-group col-xs-12 row">
+          <div class="col-xs-2 col-sm-1 row">
+            <input type="checkbox" name="" id="" class="form-group">
+          </div>
+          <div>Tôi đồng ý với
+            <span>
+              <a href="#">Điều khoản và Điều Kiện</a>
+            </span> của website</div>
+        </div>
+        <div class="col-xs-12 row">
+          <hr>
+        </div>
+      </div>
+
+      <!-- end terms -->
+      <div class="col-xs-12 row text-center">
+        <input type="submit" class="btn btn-success" id="" value="ĐẶT HÀNG">
+      </div>
+    </form>
+    <!-- End ship information -->
+
+    <!-- terms -->
+
+  </div>
+  <div class="col-xs-12">
+    <hr>
+  </div>
+
+</div>

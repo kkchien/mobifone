@@ -1,0 +1,39 @@
+<div class="" *ngIf="label != undefined">
+    <p class="text-uppercase">
+      <strong>{{label.title}}</strong>
+    </p>
+    <form [formGroup]="form" class="col-xs-12">
+      <div class="row form-group">
+        <div class="col-sm-2">
+          <label>{{label.code}}:</label>
+        </div>
+        <div class="col-sm-6 row">
+          <div class="col-xs-8">
+              <input type="text" class="form-control" formControlName="code" >
+          </div>
+          <div class="col-xs-4">
+              <button *ngIf="use_code == false" class="btn btn-info" (click)="checkCode()">
+                  {{label.use}}
+              </button>
+              <button *ngIf="use_code == true" class="btn btn-danger" (click)="cancelCode()">{{label.cancel}}</button>
+          </div>
+          <div class="col-xs-8">
+            <span *ngIf="code_entity != undefined && code_entity.status == 0" class="text-danger">
+                {{label.error}}
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="row form-group">
+        <div class="col-sm-2">
+          <label> {{label.package}}:</label>
+        </div>
+        <div class="col-sm-8  row">
+          <label *ngFor="let p of packages; let i = index" class=" col-xs-12 col-lg-3">
+            <input type="radio" formControlName="package" value="{{p.packagesId}}"> {{p.name}}</label>
+        </div>
+      </div>
+    
+    </form>
+    
+  </div>

@@ -1,0 +1,15 @@
+
+<div class="container">
+    <div class="well">
+      {{data}}
+    </div>
+  <div class="col-xs-12 text-right">
+      <!-- <ngb-datepicker  ></ngb-datepicker> -->
+      <ngb-pagination [collectionSize]="130" [(page)]="page" [maxSize]="4" [rotate]="true" [boundaryLinks]="false" (pageChange) = "changePage(page)"></ngb-pagination>
+  </div>
+  <hr>
+  <pre>Current page: {{page}}</pre>
+  <a routerLink="/blog/detail" class="btn btn-danger">Detail</a>
+</div>
+
+

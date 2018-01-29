@@ -1,0 +1,393 @@
+<div class="container">
+  <div class="col-xs-12" *ngIf="data.destination[0].location.area_name != ''">
+    <hr>
+  </div>
+  <div class="col-sm-8 col-sm-offset-2">
+    <div class="panel panel-info">
+      <div class="panel-heading text-center">
+        <h4 class="text-uppercase">{{title.heading}}</h4>
+      </div>
+      <div class="panel-body text-muted">
+        <div class="panel-content">
+          <div class="">
+            <!-- personal -->
+            <div id="personal" class="row col-sm-6">
+              <h4>
+                <strong>{{title.personal.title}}</strong>
+              </h4>
+
+              <div class="col-xs-12">
+                <!-- firstname -->
+                <div class="row col-xs-12">
+                  <p>
+                    <strong>{{title.personal.name}}:</strong>
+                    {{order.first_name + ' ' + order.last_name}}
+                  </p>
+                </div>
+
+
+                <!-- dob -->
+                <div class="row col-xs-12">
+                  <p>
+                    <strong>{{title.personal.dob}}:</strong>
+                    {{order.birthday | date:'dd-MM-yyyy'}}
+                  </p>
+                </div>
+
+                <!-- email -->
+                <div class="row col-xs-12">
+                  <p>
+                    <strong> {{title.personal.email}}:</strong>
+                    {{order.email}}
+                  </p>
+                </div>
+
+                <div class="row col-xs-12">
+                  <p>
+                    <strong>{{title.personal.phone}}:</strong>
+                    {{order.phone_number}}
+                  </p>
+                </div>
+
+                <div class="row col-xs-12">
+                  <p>
+                    <strong>{{title.personal['passport-number']}}:</strong>
+                    {{order.passport}}
+                  </p>
+                </div>
+
+                <div class="row col-xs-12">
+                  <p>
+                    <strong>{{title.personal['passport-place']}}:</strong>
+                    {{order.passport_place}}
+                  </p>
+                </div>
+
+                <div class="row col-xs-12">
+                  <p>
+                    <strong>{{title.personal['passport-date']}}:</strong>
+                    {{order.passport_day | date:'dd-MM-yyyy'}}
+                  </p>
+                </div>
+
+                <div class="col-xs-12 row">
+                  <br/>
+                </div>
+
+              </div>
+
+            </div>
+
+            <!-- detail -->
+            <div id="detail" class="row col-sm-6">
+              <h4 class="text-upperccase">
+                <strong>{{title.detail.title}}</strong>
+              </h4>
+
+              <div class="col-xs-12">
+                
+
+                <!-- protection fee -->
+                <div class="row col-xs-12" *ngIf="0">
+                  <p>
+                    <strong>{{title.detail['protection-fee']}}:</strong>
+                    {{display.protection_fee | number}} VND
+                  </p>
+                </div>
+
+                <!-- retal period -->
+                <div class="row col-xs-12">
+                  <p>
+                    <strong>{{title.detail['rent-day']}}:</strong>
+                    {{display.rent_day}}
+                  </p>
+                </div>
+
+                <!-- quantity -->
+                <div class="row col-xs-12">
+                  <p>
+                    <strong>{{title.detail['quantity']}}:</strong>
+                    {{display.quantity}}
+                  </p>
+                </div>
+
+                <!-- retal fee -->
+                <div class="row col-xs-12">
+                  <p>
+                    <strong>{{title.detail['rent-price']}}:</strong>
+                    {{display.rent_fee | number}} VND
+                  </p>
+                </div>
+
+                
+              </div>
+
+              <!-- <div class="col-xs-12 row">
+                <br/>
+              </div> -->
+
+            </div>
+
+            <div id="passport" class="row col-xs-12" *ngIf="0">
+              <h4>
+                <strong>{{title.passport.title}}</strong>
+              </h4>
+
+              <div class="row col-xs-12">
+                <div class="col-sm-3 col-xs-6">
+                  <strong>{{title.passport.no}}:</strong>
+                </div>
+                <div class="col-sm-6 col-xs-6">
+                  {{order.passport}}
+                </div>
+              </div>
+
+              <div class="row col-xs-12">
+                <div class="col-sm-3 col-xs-6">
+                  <strong>{{title.passport.place}}:</strong>
+                </div>
+                <div class="col-sm-6 col-xs-6">
+                  {{order.passport_place}}
+                </div>
+              </div>
+
+              <div class="row col-xs-12">
+                <div class="col-sm-3 col-xs-6">
+                  <strong>{{title.passport.date}}:</strong>
+                </div>
+                <div class="col-sm-6 col-xs-6">
+                  {{order.passport_day}}
+                </div>
+              </div>
+
+              <div class="col-xs-12 row">
+                <br/>
+              </div>
+            </div>
+
+            <!-- destination -->
+            <div id="destination" class="row col-xs-12" *ngIf="1">
+              <h4>
+                <strong>{{title.destination.title}}</strong>
+              </h4>
+              <div class="col-sm-12">
+                <div class="col-xs-12 col-sm-6" style="margin-bottom:10px;" *ngFor="let des of data.destination; let i = index">
+                  <div class="">
+                    <div class="row">
+                      <p>
+                        <strong>{{title.destination.location}}:</strong>
+                        {{des.location.area_name}}
+                      </p>
+                      <div class="clearfix"></div>
+                    </div>
+
+                    <div class="row">
+                      <p>
+                        <strong>{{title.destination['start-date']}}:</strong>
+                        {{des.startDate | date:'dd-MM-yyyy'}}
+                      </p>
+                      <div class="clearfix"></div>
+                    </div>
+
+                    <div class="row">
+                      <p>
+                        <strong>{{title.destination['expired-date']}}:</strong>
+                        {{des.expiredDate | date:'dd-MM-yyyy'}}
+                      </p>
+                      <div class="clearfix"></div>
+                    </div>
+
+                    <!-- invisible protection -->
+
+                    <div class="row" *ngIf="0">
+                      <p>
+                        <strong>{{title.destination.protection.title}}:</strong>
+                        <span *ngIf="des.protected == '1'">{{title.destination.protection.yes}}</span>
+                        <span *ngIf="des.protected == '0'">{{title.destination.protection.no}}</span>
+                      </p>
+                      <div class="clearfix"></div>
+                    </div>
+                  </div>
+                  <div class="col-xs-12 visible-xs">
+                    <br/>
+                  </div>
+                </div>
+              </div>
+              <div class="clearfix"></div>
+              <div class="col-xs-12 row">
+                <br/>
+              </div>
+            </div>
+
+            <div class="row col-xs-12">
+              <!-- receive -->
+              <div id="receive" class="row col-sm-6" *ngIf="1">
+                <h4 class="text-uppercase">
+                  <strong>{{title.delivery.receive}}</strong>
+                </h4>
+
+                <div class="col-xs-12">
+                  <div *ngIf="receive.type =='1'">
+
+                    <div class="row col-xs-12">
+                      <p>
+                        <strong>{{title.delivery.name}}:</strong>
+                        {{data.receive.agency.name_agency}}
+                      </p>
+                    </div>
+
+                    <div class="row col-xs-12">
+                      <p>
+                        <strong>{{title.delivery.address}}:</strong>
+                        {{data.receive.agency.address}}
+                      </p>
+                    </div>
+
+                    <div class="col-xs-12 row">
+                      <br/>
+                    </div>
+                  </div>
+
+                  <div *ngIf="receive.type =='0'">
+
+                    <div class="row col-xs-12">
+                      <p>
+                        <strong>{{title.delivery.name}}:</strong>
+                        {{data.receive.agency.name}}
+                      </p>
+                    </div>
+
+                    <div class="row col-xs-12">
+                      <p>
+                        <strong>{{title.delivery.address}}:</strong>
+                        {{data.receive.agency.address}}
+                      </p>
+                    </div>
+
+                    <div class="col-xs-12 row">
+                      <br/>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- return -->
+              <div id="return" class="row col-sm-6" *ngIf="1">
+                <h4 class="text-uppercase">
+                  <strong>{{title.delivery.return}}</strong>
+                </h4>
+
+                <div class="col-xs-12">
+                  <div *ngIf="return.type==0">
+                    <div class="row col-xs-12">
+                      <p>
+                        <strong>{{title.delivery.name}}:</strong>
+                        {{data.return.agency.name}}
+                      </p>
+                    </div>
+                    <div class="row col-xs-12">
+                      <p>
+                        <strong>{{title.delivery.address}}:</strong>
+                        {{data.return.agency.address}}
+                      </p>
+                    </div>
+
+
+
+                  </div>
+
+                  <div *ngIf="return.type==1">
+
+                    <div class="row col-xs-12">
+                      <p>
+                        <strong>{{title.delivery.name}}:</strong>
+                        {{data.return.agency.name_agency}}
+                      </p>
+                    </div>
+
+                    <div class="row col-xs-12">
+                      <p>
+                        <strong>{{title.delivery.address}}:</strong>
+                        {{data.return.agency.address}}
+                      </p>
+                    </div>
+
+                  </div>
+                </div>
+
+                <div class="col-xs-12 row">
+                  <br/>
+                </div>
+              </div>
+            </div>
+
+
+
+
+
+
+            <div class="col-xs-12 text-center">
+              <button class="btn btn-danger" (click)="back()"> {{title.button.back}}</button>
+              <button type="button" (click)="show()" class="btn btn-primary" data-toggle="modal" data-target="#payment"> {{title.button.next}}</button>
+            </div>
+
+            <div id="payment" class="modal fade" role="dialog">
+              <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">{{title.confirm.heading}}</h4>
+                  </div>
+                  <div class="modal-body">
+
+                    <div class="form-group ">
+
+                      <label>
+                        <input type="radio" value="1" [(ngModel)]="payment_method"> {{title.confirm['no-deposit']}}
+                      </label>
+                    </div>
+                    <div class="form-group ">
+
+                      <label class="">
+                        <input type="radio" value="2" [(ngModel)]="payment_method"> {{title.confirm['deposit']}} ({{title.confirm['fee']}}: {{order.quantity_driver}} x 2,000,000 VND)
+                      </label>
+                      <!-- <div class="col-sm-12" *ngIf="payment_method ==2">
+                        
+                      </div> -->
+                      <div class="col-xs-12">
+                        <br>
+                      </div>
+                      <h3 class="text-danger">
+                        <strong>{{title.detail['total-price']}}:</strong>
+                        <span *ngIf="payment_method != 2">{{display.total_fee | number}} VND</span>
+                        <span *ngIf="payment_method == 2">{{display.total_fee + 2000000* order.quantity_driver | number}} VND</span>
+                      </h3>
+
+                    </div>
+
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-success" [disabled]="payment_method == 0" (click)="finish()">{{title.confirm['yes']}}</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal" #close01>{{title.confirm['no']}}</button>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+
+            <div class="col-xs-12">
+              <br>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- <br> -->
+
+</div>

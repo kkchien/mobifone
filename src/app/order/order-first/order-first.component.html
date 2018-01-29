@@ -1,0 +1,211 @@
+<div class="container" *ngIf="myForm != undefined">
+  <div class="col-xs-12">
+    <div class="col-xs-12 row">
+      <hr>
+    </div>
+    <div class="col-xs-12 row">
+      <p class="text-danger text-uppercase" (click)="test()" >{{ title.requirement}}</p>
+
+    </div>
+    
+
+    <form [formGroup]="myForm" (submit)="order()">
+
+
+
+      <!-- Personal information -->
+      <div class="col-xs-12 row">
+        <br>
+      </div>
+      <order-personal-info #person [label]="title.personal" [error]="title.error" id="personal-information">
+      </order-personal-info>
+      <!-- End Personal information -->
+
+      <!-- passprt information -->
+      <order-passport-info [label]="title.passport" [error]="title.error" id="passport-information" >
+      </order-passport-info>
+      <!-- End passprt information -->
+
+      <!-- device -->
+      <div id="device-number" class="row col-xs-12">
+        <p><strong class="text-uppercase">{{ title.device.title}}</strong>
+          <span class="text-danger">*</span>
+        </p>
+        <!-- quantity -->
+        <div class="form-group col-xs-12 row" [ngClass]="{'has-feedback':device.valid && device.touched,
+                        'has-success':device.valid && device.touched,
+                        'has-error':!device.valid && device.touched }">
+          <div class="col-sm-2">
+            <label for="">{{ title.device.quantity}}:</label>
+          </div>
+          <div class="col-sm-4">
+            <input type="text" class="form-control" formControlName="device">
+            <span [ngClass]="{'glyphicon':device.valid && device.touched, 
+                                'glyphicon-ok':device.valid && device.touched, 
+                                'form-control-feedback':device.valid && device.touched}"></span>
+            <!-- invalid -->
+            <span [ngClass]="{'glyphicon':!device.valid && device.touched, 
+                                'glyphicon-remove':!device.valid && device.touched, 
+                                'form-control-feedback':!device.valid && device.touched}"></span>
+          </div>
+          <div class="col-sm-6 text-danger" *ngIf="!device.valid && device.touched">
+            <span *ngIf="device.errors.pattern">{{errors['pattern']}}</span>
+            <span *ngIf="device.errors.min">{{errors['min']}}</span>
+          </div>
+        </div>
+        <div class="col-xs-12 row">
+          <hr>
+        </div>
+      </div>
+      <!-- End device -->
+
+      <!-- promotion -->
+      <order-promotion [label]="title.promotion" (select)="getPromotionOuput($event)"></order-promotion>
+      <!-- end promotion -->
+      
+      <!-- destination information -->
+      <order-destination-info  [label]="title.destination" [error]="title.error" [country]="country" id="destination-information"></order-destination-info>
+      <!-- End destination information -->
+
+      <!-- ship information -->
+      <div id="ship-information" class="row col-xs-12">
+        <p> <strong class="text-uppercase">{{ title.delivery.title }}</strong>
+          <span class="text-danger">*</span>
+        </p>
+
+        <!-- information -->
+
+        <div class="">
+          <div class="form-group col-xs-12 row" *ngIf="0" >
+            <!-- <div class="clearfix"></div> -->
+            <div class="col-sm-2">
+              <label>{{ title.delivery.country }}</label>
+            </div>
+            <div class="col-sm-3">
+              <select name="" id="country" class="" class="form-control">
+                <option value="VN">Viet Nam</option>
+                <!-- <option value="SIG">Singapore</option> -->
+              </select>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+
+          <div class="form-group col-xs-12 row">
+            <div class="col-xs-12">
+              <label >{{ title.delivery.receive.title }}</label>
+            </div>
+            <div class="col-xs-12">
+
+              <!-- outside city -->
+              <div class="row">
+                <!-- receive address -->
+                <order-receive-info #receive [error]="title.error" [label]="title.delivery.receive.method">
+                </order-receive-info>
+              </div>
+
+              <!-- in the city -->
+              <!-- <div class="row">
+                <div class="col-xs-10">
+                  * {{ title.delivery.receive.method.airport.title }}.
+                </div>
+                <div class="col-xs-2">
+                  <input type="radio" name="" id="" value="2" formControlName="receiveMethod">
+                </div>
+                <order-receive-info [label]="title.delivery.receive.method.airport" *ngIf="receiveMethod.value=='2'">
+                </order-receive-info>
+              </div> -->
+
+              <!-- at office -->
+              <!-- <div class="row">
+                <div class="col-xs-10">
+                  * {{ title.delivery.receive.method.third.title }}.
+                </div>
+                <div class="col-xs-2">
+                  <input type="radio" name="" id="" value="3" formControlName="receiveMethod">
+                </div>
+              </div> -->
+            </div>
+          </div>
+
+          <div class="form-group col-xs-12 row">
+            <div class="col-xs-12">
+              <label for="">{{ title.delivery.return.title }}</label>
+            </div>
+            <div class="col-xs-12">
+
+              <div class="row">
+
+                <!-- return address -->
+                <order-receive-info #return [error]="title.error" [label]="title.delivery.return.method">
+                </order-receive-info>
+
+              </div>
+
+              <!-- <div class="row">
+                <div class="col-xs-10">
+                  * {{ title.delivery.return.method.second.title }}.
+                </div>
+                <div class="col-xs-2">
+                  <input type="radio" value="2" formControlName="returnMethod">
+                </div>
+
+                <order-return-info [label]="title.delivery.return.method.second"  *ngIf="returnMethod.value=='2'">
+                  
+                </order-return-info>
+
+              </div> -->
+
+              <!-- <div class="row">
+                <div class="col-xs-10">
+                  * {{ title.delivery.return.method.third.title }}.
+                </div>
+                <div class="col-xs-2">
+                  <input type="radio" name="" id="" value="3" formControlName="returnMethod">
+                </div>
+
+              </div> -->
+
+
+            </div>
+          </div>
+        </div>
+        <!-- end infomation -->
+        <div class="col-xs-12">
+          <hr>
+        </div>
+      </div>
+      <div id="terms" class="col-xs-12">
+        <div class="form-group col-xs-12 row">
+          <label for="">{{ title.term.title }}:</label>
+          <div class="col-xs-12" *ngFor="let t of title.term.content">
+            <p>- {{t}}</p>
+          </div>
+        </div>
+        <div class="form-group col-xs-12 row">
+          <label>
+            <input type="checkbox" name="" id="" class="form-group" formControlName="term">
+            <span>{{ title.term.click.begin }}
+              <span>
+                {{ title.term.click.middle }}
+              </span>{{ title.term.click.last }}
+            </span>
+          </label>
+          
+        </div>
+        <div class="col-xs-12 row">
+          <hr>
+        </div>
+      </div>
+
+      <!-- end terms -->
+      <div class="col-xs-12 row text-center">
+        <button type="button" class="btn btn-success" id="" (click)="order()" > {{ title.button}} </button>
+      </div>
+    </form>
+    <!-- End ship information -->
+
+    <!-- terms -->
+
+  </div>
+
+</div>

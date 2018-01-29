@@ -1,0 +1,198 @@
+
+<!-- 
+
+  <div>
+    <ul>
+      <li>
+        <a href="/#instruction">Tien ich</a>
+      </li>
+      <li>
+        <a href="/#register">Dang ky</a>
+      </li>
+      <button id="btn-test">Click</button>
+    </ul>
+  </div> -->
+  <div class="container" style="padding-left:0px;padding-right:0px">
+    <div class=" mbf-color row" style="margin-left:0px;margin-right:0px">
+      <img src="{{info.banner}}" width="100%" style="" alt="" class="img-responsive mobibanner">
+      <a class="btn btn-warning btn-lg" href="http://localhost:4200/order">{{info.buttonorder}}</a>
+    </div>
+    <div class="clearfix"></div>
+
+    <!-- <h1>
+      Welcome to {{title}}!
+    </h1> -->
+
+    <!-- instruction -->
+    <div id="instruction" class="row col-xs-12 row-instruction">
+      <div class="col-xs-12 ">
+        <div class="">
+          <h2>{{info.instruction.title.simple}} 
+            <span>
+              <strong>{{info.instruction.title.strong}} </strong>
+             
+            </span>
+          </h2>
+          <hr><br><br>
+          <div *ngFor="let i of info.instruction.p">
+            <h4>{{ i }} </h4>
+          </div>
+        </div>
+        <div class="col-xs-12">
+          <h3 class="col-xs-12 col-sm-4 text-center" *ngFor="let i of info.instruction.item; index as id">
+            <div class="row">
+              <span class="fa-stack fa-2x">
+                <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                <i class={{i.icon}}></i>
+              </span><br/>
+            </div>
+            <strong [innerHtml]="i.name | newline"></strong> <br/><br/><br/>
+            <p style="font-size: 14px; text-align:justify">{{i.description}}</p>
+          </h3>
+        </div>
+        <div class="clearfix"></div>
+        
+      </div>
+    </div>
+    <div class="clearfix"></div>
+    <!-- end instruction -->
+
+    <!-- how to register -->
+    <div id="register" class="row col-xs-12 row-register">
+      <div class="col-xs-12" style="text-align: left">
+        <h2>{{ info.register.title.simple }}
+          <span>
+            <strong>{{ info.register.title.strong }}</strong>
+           
+          </span>
+        </h2>
+        <hr>
+      </div>
+      <div class="col-xs-12  row">
+        <div *ngFor="let i of info.register.step">
+          <div class="col-xs-12 col-sm-6 col-md-3" style="text-align: center; margin-top:30px">
+            <div class="head" >
+                <h3 class=" text-primary">
+                    <strong>{{ i.name }}</strong>
+                  </h3>
+            </div>
+            <div class="content">
+              <p>{{ i.way }}</p>
+              <img src={{i.image}} width="50%" height="50%" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class=" col-sm-12">
+        
+      </div>
+    </div>
+    <div class="clearfix"></div>
+    <!-- end how to register -->
+    <!-- what is MBF -->
+    <!-- <div id="what-is-mbf" class="col-xs-12">
+    <h1>{{ info.about.title}}</h1>
+    <div class="col-sm-8 col-sm-offset-2 col-xs-12">
+      <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/N10QQwLfV-k?rel=0&amp;controls=0&amp;showinfo=0"
+          frameborder="0" allowfullscreen></iframe>
+
+      </div>
+    </div>
+    <div class="col-xs-12 row">
+      <hr>
+    </div>
+  </div>
+  <div class="clearfix"></div> -->
+    <!-- end what is MBF -->
+
+    <!-- Price table-->
+    <div id="price-table">
+      <h1 class="col-sm-12">
+        <strong>{{ info.price.title}}</strong>
+      </h1>
+
+      <home-price></home-price>
+
+      <!-- <div class="col-sm-8  price-table" *ngIf="0">
+      <h3 class="col-xs-12">*{{info.price.personal.title}}</h3>
+      <table class="table table-hover table-bordered col-sm-offset-1">
+        <thead>
+          <tr>
+            <th class="col-sm-3">{{info.price.personal.thead.price}}</th>
+            <th class="col-sm-9">{{info.price.personal.thead.location}}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>VND 150000</td>
+            <td>China, Hong Kong, Macau, Cambodia, Indonesia, Malaysia, Singapore, Taiwan, Thailand</td>
+          </tr>
+          <tr>
+            <td>VND 180.000</td>
+            <td>Japan, South Korea</td>
+          </tr>
+          <tr>
+            <td>VND 250.000</td>
+            <td>Australia, New Zealand, UK, Albania, Ireland, Estonia, Austria, Belarus, Bulgaria, Belgium, Iceland, BH, Poland,
+              Denmark, Germany, Russia, France &amp; Monaco, Finland, Georgia, Netherlands, Czech Republic, Croatia, Latvia,
+              Lithuania, Liechtenstein, Luxembourg, Romania, Malta, Macedonia, Norway, Portugal, Sweden, Switzerland, Cyprus,
+              San Marino, Slovakia, Slovenia, Turkey, Ukraine, Spain, Greece, Hungary, Italy&amp;The Vatican, Gibraltar,
+              Serbia, Montenegro.
+            </td>
+          </tr>
+          <tr>
+            <td>VND 250.000</td>
+            <td>Middle East &amp; Egypt, Ghana, Morocco, South Africa, Uganda.</td>
+          </tr>
+          <tr>
+            <td>VND 300.000</td>
+            <td>USA, Canada, Argentina</td>
+          </tr>
+          <tr>
+            <td>VND 120.000</td>
+            <td>Việt Nam</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-sm-8" *ngIf="0">
+      <h3 class="col-xs-12">*{{info.price.company.title}}:</h3>
+      <table class="table table-striped table-bordered col-sm-offset-1 ">
+        <thead>
+          <tr>
+            <th class="col-sm-2">{{info.price.company.thead.package.label}}</th>
+            <th class="col-sm-2">{{info.price.company.thead.price}} (VND)</th>
+            <th class="col-sm-2">{{info.price.company.thead.period}}</th>
+            <th class="col-sm-6">{{info.price.company.thead.use}}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Promotional</td>
+            <td>13.000.000</td>
+            <td>12 {{info.price.unit.month}}</td>
+            <td>35 {{info.price.unit.day}}</td>
+          </tr>
+          <tr>
+            <td>{{info.price.company.thead.package.name}}</td>
+            <td>23.000.000</td>
+            <td>12 {{info.price.unit.month}}</td>
+            <td>75 {{info.price.unit.day}}</td>
+          </tr>
+          <tr>
+            <td>V.I.P Gold</td>
+            <td>53.000.000</td>
+            <td>12 {{info.price.unit.month}}</td>
+            <td>150 {{info.price.unit.day}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div> -->
+      <div class="clearfix"></div>
+    </div>
+    <div class="clearfix"></div>
+
+    <!-- end price table -->
+  </div>
+  <div id="end1"></div>

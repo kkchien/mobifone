@@ -1,0 +1,44 @@
+<div class="container" style="border-bottom:10px solid #0099ff">
+  <nav class="navbar navbar-default navbar-main">
+    <div class="navbar-header banner-btn">
+      <a routerLink="/" class="navbar-brand">
+        <img *ngIf="type ==0" class="img-responsive image_mobi" src="assets/logo/logo_chuan_vn.png">
+        <img *ngIf="type !=0" class="img-responsive image_mobi" src="assets/logo/logo_chuan_en.png">
+      </a>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="navbar-header navbar-right logo-language">
+      <span *ngIf="type==0" class=" pull-right language" title="Tiếng Anh" (click)="setLanguageType(1)">
+        <img class="img-responsive logo-language" src="assets/icon/en.png">
+      </span>
+
+      <span *ngIf="type==1" class=" pull-right language" title="Vietnamese" (click)="setLanguageType(0)">
+        <img class="img-responsive logo-language" src="assets/icon/vn.png">
+      </span>
+    </div>
+    <div class="navbar-collapse collapse main-menu">
+      <ul class="nav navbar-nav">
+        <li class="dropdown itemMenu" *ngFor="let m of data.menu; let i = index;">
+          <a class="text-uppercase" href="javascript:void(0)"  (click)="doSelect(i)" (click)="setId(m.url)" class="text-default dropdown-toggle" data-toggle="dropdown"
+            [ngClass]="{'menu-active':select_tab == i}">
+            {{m.name}}
+            <span *ngIf="i==4" class="caret"></span>
+          </a>
+          <ul id="sub" *ngIf="checksub" class="dropdown-menu">
+            <li *ngFor="let sub of m.submenuinfo; let j = index">
+              <a [routerLink]="sub.url" class="text-default">
+                {{sub.namechil}}
+              </a>
+            </li>
+          </ul>
+
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+<div class="clearfix"></div>

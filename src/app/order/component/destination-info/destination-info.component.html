@@ -1,0 +1,140 @@
+<div *ngIf="country.length > 0">
+  <div [formGroup]="formGroup" class="row col-xs-12">
+    <div class="row col-xs-12">
+      <p>
+        <strong class="text-uppercase">{{ label.title }}</strong>
+        <span *ngIf="isConflict()" class="text-danger">{{label.error}}</span>
+      </p>
+  
+    </div>
+    <div formArrayName="destinations" class="col-xs-12">
+      <div class="" *ngFor="let des of destinations.controls; let i=index" [formGroupName]="i">
+        <p>
+          <strong>{{ label.title }}</strong>
+          <span>{{i+1}}</span>
+          <span class="text-danger">*</span>
+          <a *ngIf="i > 0" href="javascript:void(0)" (click)="removeDestination(i)">{{ label.remove }}</a>
+          <span class="text-danger" *ngIf="check_conflict(i)">
+            Thời gian không hợp lệ. Vui lòng chọn lại.
+          </span>
+        </p>
+        <!-- destination location -->
+        <div class="form-group col-xs-12 row" [ngClass]="{'has-feedback':getLocation(i).valid &&getLocation(i).touched,
+        'has-success':getLocation(i).valid &&getLocation(i).touched,
+        'has-error':!getLocation(i).valid &&getLocation(i).touched}">
+          <div class="col-sm-2">
+            <label>{{ label.location }}:</label>
+          </div>
+
+          <div class="col-sm-4" *ngIf="country.length >0">
+            <select class="form-control" formControlName="location">
+              <option value="" disabled selected>{{ label.option }}</option>
+              <option *ngFor="let y of country; let i = index;" value="{{y.area_id}}">
+                {{y.area_name}} - {{y.price}} VND
+              </option>
+            </select>
+            
+            <span [ngClass]="{'glyphicon':getLocation(i).valid &&getLocation(i).touched, 
+                'glyphicon-ok':getLocation(i).valid &&getLocation(i).touched, 
+                'form-control-feedback':getLocation(i).valid &&getLocation(i).touched}"></span>
+            <!-- invalid -->
+            <span [ngClass]="{'glyphicon':!getLocation(i).valid &&getLocation(i).touched, 
+                'glyphicon-remove':!getLocation(i).valid &&getLocation(i).touched, 
+                'form-control-feedback':!getLocation(i).valid &&getLocation(i).touched}"></span>
+          </div>
+          <div class="col-sm-6 text-danger" *ngIf="!getLocation(i).valid && getLocation(i).touched">
+            {{error}}
+          </div>
+          <div class="clearfix"></div>
+        </div>
+  
+  
+        <!-- start  date -->
+        <div class="form-group col-xs-12 row" [ngClass]="{'has-feedback':getStart(i).valid &&getStart(i).touched,
+        'has-success':getStart(i).valid &&getStart(i).touched && !check_conflict(i),
+        'has-error':(getStart(i).invalid &&getStart(i).touched) || (getStart(i).valid &&getStart(i).touched && check_conflict(i))}">
+          <div class="col-sm-2">
+            <label for="">{{ label.start }}:</label>
+          </div>
+          <div class="col-sm-4">
+            <!-- <input type="date" id = {{i}} class="form-control" formControlName="startDate" (change)="isConflict()" /> -->
+            <date-input formControlName="startDate" [min-date]="today"></date-input>
+            <span [ngClass]="{'glyphicon':getStart(i).valid &&getStart(i).touched && !check_conflict(i), 
+            'glyphicon-ok':getStart(i).valid &&getStart(i).touched && !check_conflict(i), 
+            'form-control-feedback':getStart(i).valid &&getStart(i).touched && !check_conflict(i)}"></span>
+            <!-- invalid -->
+            <span [ngClass]="{'glyphicon':(getEnd(i).invalid &&getEnd(i).touched) || (getEnd(i).valid &&getEnd(i).touched && check_conflict(i)), 
+            'glyphicon-remove':(getStart(i).invalid &&getStart(i).touched) || (getStart(i).valid &&getStart(i).touched && check_conflict(i)), 
+            'form-control-feedback':(getStart(i).invalid &&getStart(i).touched) || (getStart(i).valid &&getStart(i).touched && check_conflict(i))}"></span>
+          </div>
+          <div class="col-sm-6 text-danger" *ngIf="(getStart(i).invalid &&getStart(i).touched) || (getStart(i).valid &&getStart(i).touched && check_conflict(i))">
+            {{error}}
+          </div>
+          <div class="clearfix"></div>
+        </div>
+  
+        <!-- expire date -->
+        <div class="form-group col-xs-12 row" [ngClass]="{'has-feedback':getEnd(i).valid &&getEnd(i).touched,
+        'has-success':getEnd(i).valid &&getEnd(i).touched && !check_conflict(i),
+        'has-error':(getEnd(i).invalid &&getEnd(i).touched) || (getEnd(i).valid &&getEnd(i).touched && check_conflict(i))}">
+          <div class="col-sm-2">
+            <label for="">{{ label.end }}:</label>
+          </div>
+          <div class="col-sm-4">
+            <!-- <input type="date" class="form-control " (change)="isConflict()" formControlName="expiredDate" /> -->
+            <date-input formControlName="expiredDate" [min-date]="dateStart(i)" ></date-input>
+            <span [ngClass]="{'glyphicon':getEnd(i).valid &&getEnd(i).touched && !check_conflict(i), 
+            'glyphicon-ok':getEnd(i).valid &&getEnd(i).touched && !check_conflict(i), 
+            'form-control-feedback':getEnd(i).valid &&getEnd(i).touched && !check_conflict(i)}"></span>
+            <!-- invalid -->
+            <span [ngClass]="{'glyphicon':(getEnd(i).invalid &&getEnd(i).touched) || (getEnd(i).valid &&getEnd(i).touched && check_conflict(i)), 
+            'glyphicon-remove':(getEnd(i).invalid &&getEnd(i).touched) || (getEnd(i).valid &&getEnd(i).touched && check_conflict(i)), 
+            'form-control-feedback':(getEnd(i).invalid &&getEnd(i).touched) || (getEnd(i).valid &&getEnd(i).touched && check_conflict(i))}"></span>
+          </div>
+          <div class="col-sm-6 text-danger" *ngIf="(getEnd(i).invalid &&getEnd(i).touched) || (getEnd(i).valid &&getEnd(i).touched && check_conflict(i))">
+            {{error}}
+          </div>
+          <div class="clearfix"></div>
+        </div>
+  
+  
+  
+        <!-- protected -->
+        <div class="form-group col-xs-12 row" *ngIf="0">
+          <div class="col-sm-2">
+            <label for="">{{ label.protection.title }}:</label>
+          </div>
+          <div class="col-sm-4">
+            <div class="col-sm-6 row">
+              <div class="col-sm-12">
+                <label class="center-block">
+                  <input type="radio" value="1" formControlName="protected"> {{ label.protection.yes }}</label>
+              </div>
+            </div>
+  
+            <div class="col-sm-6 row">
+              <div class="col-xs-12">
+                <label class="center-block">
+                  <input type="radio" value="0" formControlName="protected"> {{ label.protection.no }}</label>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 text-danger" *ngIf="getProtected(i).touched && (getProtected(i).value !=0 && getProtected(i).value!=1)">
+            {{error}}
+          </div>
+        </div>
+        <!-- {{number}} -->
+  
+      </div>
+      <div class="col-xs-12">
+        <button type="button" class="btn btn-danger" (click)="addDestination()">{{ label.add}}</button>
+      </div>
+      <div class="col-xs-12 row">
+        <hr>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <div class="col-xs-12">
+  <pre>{{formGroup.value | json}}</pre>
+</div> -->

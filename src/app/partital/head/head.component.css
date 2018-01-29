@@ -1,0 +1,58 @@
+a{
+    color:black;
+}
+.navbar-default .navbar-nav > li > a
+{
+    color:black;
+}
+a:hover{
+    color: #277cbe;
+    background-color: white
+}
+
+.nav > li > a:hover, .nav > li > a:focus{
+    background-color: #eee
+}
+
+.language:hover{
+    cursor: pointer;
+}
+
+.menu-active {
+    background-color:#eee
+}
+
+.menu-active:focus {
+    background-color:#eee
+}
+
+.menu-active:active {
+    background-color:#eee
+}
+
+.menu-active:hover {
+    background-color:#eee
+}
+/* custom header */
+.container{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.logo-language img{
+    width: 100%;
+}
+
+.navbar{
+     margin-bottom: 0;
+    border: none;
+}
+*{
+    margin: 0 auto;
+    padding: 0;
+}
+
+
+ 
+  
+ 

@@ -1,0 +1,11 @@
+.panel-group{
+    margin-bottom: 0px !important;
+}
+.faq-title{
+    text-decoration: none;
+    font-size: 13px;
+}
+.faq-content{
+    font-size: 13px;
+    line-height: 20px;
+}
