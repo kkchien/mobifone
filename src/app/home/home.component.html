@@ -14,7 +14,7 @@
   </div> -->
   <div class="container" style="padding-left:0px;padding-right:0px">
     <div class=" mbf-color row" style="margin-left:0px;margin-right:0px">
-      <img src="{{info.banner}}" width="100%" style="" alt="" class="img-responsive mobibanner">
+      <img src="{{info.banner}}" alt="" class="img-responsive mobibanner">
       <a class="btn btn-warning btn-lg" href="http://localhost:4200/order">{{info.buttonorder}}</a>
     </div>
     <div class="clearfix"></div>
@@ -68,7 +68,7 @@
         </h2>
         <hr>
       </div>
-      <div class="col-xs-12  row">
+      <div class="col-xs-12">
         <div *ngFor="let i of info.register.step">
           <div class="col-xs-12 col-sm-6 col-md-3" style="text-align: center; margin-top:30px">
             <div class="head" >
@@ -78,7 +78,7 @@
             </div>
             <div class="content">
               <p>{{ i.way }}</p>
-              <img src={{i.image}} width="50%" height="50%" alt="">
+              <img src={{i.image}} alt="">
             </div>
           </div>
         </div>

@@ -1,0 +1,32 @@
+<div class="container">
+  <h3>{{data.title}}</h3>
+  <div class="row">
+    <div class="form-inline" [formGroup]="formGroup">
+      <div class="form-group col-xs-12">
+        <label for="provice">{{data.province}}</label>
+        <select (change)="getAgency(provice.value)" class="form-control" formControlName="provice">
+          <option value="" disabled selected>{{data.option_province}}</option>
+          <option *ngFor="let p of provices" [value]="p.areaId">{{p.name}}</option>
+        </select>
+        <button class="btn btn-primary">{{data.label_btn}}</button>
+      </div>
+
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-xs-12">
+      <h4>{{data.sub_title}}:</h4>
+      <div *ngIf="agency.length > 0" style="margin-left: 10%">
+        <div *ngFor="let store of show;let i=index">
+          <h4 style="color:rgb(52, 82, 216)">
+             {{count*(page-1)+i+1}}. {{data.title_item}}: {{store.name}}
+          </h4>
+          <p>{{data.address}}: {{store.address}}</p> <hr>
+        </div>
+      </div>
+      <p *ngIf="agency.length ==''">{{data.notification}}.</p>
+      <ngb-pagination class="col-xs-12 text-right" [collectionSize]="listLength" [(page)]="page" [maxSize]="5" [rotate]="true" (pageChange)="changePage(page)"></ngb-pagination>
+    </div>
+  </div>
+</div>

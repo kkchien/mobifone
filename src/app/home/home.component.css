@@ -5,14 +5,45 @@
     display: block;
     position: relative;
     overflow: hidden;
+    height: 700px;
+    width: 100%;
     
 }
 .mbf-color a{
-    top: 50%;
-    left: 50%;
+    text-align: center;
+    top: 85%;
+    left: 40%;
     position: absolute;
     z-index: 1;
+    
+    width: 20vw;
+    height: 5vw;
+    font-size: 2vw;
+    line-height: 3.5vw;
     /* width: 10%; */
+    background-color: Transparent;
+    /* background-repeat:no-repeat; */
+    border: 2px solid #fff;
+    /* cursor:pointer; */
+    /* overflow: hidden; */
+    /* outline:none; */
+    /* transition: opacity 1s linear; */
+    -webkit-transition: background 500ms linear;
+    -moz-transition: background 500ms linear;
+    -o-transition: background 500ms linear;
+    -ms-transition: background 500ms linear;
+    transition: background 500ms linear;
+  
+}
+.mbf-color a:hover{
+    background: #fff;
+    color: #333333;
+    -webkit-transition: background 500ms linear;
+    -moz-transition: background 500ms linear;
+    -o-transition: background 500ms linear;
+    -ms-transition: background 500ms linear;
+    transition: background 500ms linear;
+   
     
 }
 /* .row-instruction, .row-register{
@@ -20,7 +51,7 @@
     padding-bottom: 40px;
 } */
 .row-instruction, .row-register{
-    background: rgb(196, 231, 240);
+    background: rgb(234, 247, 217);
     margin-right: 0px; 
     margin-left: 0px; 
     /* padding-right: 40px; */
@@ -50,7 +81,8 @@
     height: 200px;
 }
 .content img{
-    height: 60%;
+    height: 50%;
+    margin-top: 15px;   
 }
 .content p{
     padding: 10px;

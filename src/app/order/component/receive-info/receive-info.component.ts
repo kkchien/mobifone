@@ -33,8 +33,11 @@ export class ReceiveInfoComponent implements OnInit {
     );
 
     this.orderService.getProvinces().subscribe(
-      data => this.provinces = data,
+      data => {this.provinces = data;
+       
+      },
       error => console.log(error)
+      
     );
 
 

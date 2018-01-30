@@ -72,7 +72,7 @@
     <!-- booking name -->
     <div class="row form-group" [ngClass]="{'has-feedback':city.valid && city.touched,'has-success':city.valid && city.touched,'has-error':!city.valid && city.touched }">
       <div class="col-sm-2">
-        <label for="center-block">{{ label.city.label }}:</label>
+        <label for="center-block">{{label.city.label }}:</label>
       </div>
       <div class="col-sm-4">
         <select (change)="getAgency(city.value)" class="form-control country-select" formControlName="city">

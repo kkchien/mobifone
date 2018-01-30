@@ -37,13 +37,18 @@ import { PriceComponent } from './home/price/price.component';
 import { PriceTableComponent } from './price-table/price-table.component';
 import { AppConfig } from './app-config';
 import { TestNavComponent } from './test-nav/test-nav.component';
-import {NewLine} from './pipe/pipebreakline'
+import { NewLine } from './pipe/pipebreakline';
+import { PlaceRegisterComponent } from './place-register/place-register.component'
+import { PlaceService } from './place-register/place.service';
+import { NewsComponent } from './news/news.component';
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent, data: { key: 'home' } },
   { path: 'contact', component: ContactComponent, data: { key: 'contact' } },
   { path: 'faq', component: FaqComponent, data: { key: 'faq' } },
   { path: 'account', component: AccountComponent, data: { key: 'account' } },
   { path: 'price', component: PriceTableComponent, data: { key: 'price' } },
+  { path: 'news', component: NewsComponent, data: { key: 'news' } },
+  { path: 'place-register', component: PlaceRegisterComponent, data: { key: 'place-register' } },
   { path: 'blog', loadChildren: './blog/blog.module#BlogModule', data: { preload: false, key: 'blog' } },
   { path: 'order', loadChildren: './order/order.module#OrderModule', data: { preload: true, key: 'order' } },
   { path: '404', component: NotFoundComponent },
@@ -73,7 +78,9 @@ export function configFactory(config: AppConfig) {
     PriceComponent,
     PriceTableComponent,
     TestNavComponent,
-    NewLine
+    NewLine,
+    PlaceRegisterComponent,
+    NewsComponent
     // OrderFirstComponent,
     // OrderSecondComponent,
     // PersonalInfoComponent,
@@ -96,6 +103,7 @@ export function configFactory(config: AppConfig) {
   // { provide: RouteReuseStrategy, useClass: ReuseStrategy }
   providers: [
     FaqService,
+    PlaceService,
     CustomPreloadingStrategy,
     {
       provide: APP_INITIALIZER,

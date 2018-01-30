@@ -53,12 +53,13 @@ export class HeadComponent implements OnInit {
       this.checksub = false;
     }
 
-    console.log(this.data.menu[id].url)
-    if(this.data.menu[id].target == undefined){
-      console.log('Ok')
-      this._router.navigate(['//'+this.data.menu[id].url])
-    } else {
-      this._router.navigate(['//' +this.data.menu[id].url], {queryParams:{target:this.data.menu[id].target}});
+    if(id != 4){
+      if(this.data.menu[id].target == undefined){
+        // console.log('Ok')
+        this._router.navigate(['//'+this.data.menu[id].url])
+      } else {
+        this._router.navigate(['//' +this.data.menu[id].url], {queryParams:{target:this.data.menu[id].target}});
+      }
     }
     
   }

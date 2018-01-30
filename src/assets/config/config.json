@@ -28,30 +28,28 @@
           {
             "url": "home",
             "name": "Tiện ích",
-            "target":"instruction"
+            "target": "instruction"
           },
-         
           {
             "url": "home",
             "name": "Giá cước",
-            "target":"price-table"
+            "target": "price-table"
           },
           {
             "url": "home",
             "name": "Hướng dẫn đặt hàng",
-            "target":"register"
+            "target": "register"
           },
-          
           {
-            
+            "url": "home",
             "name": "Thông tin",
             "submenuinfo": [
               {
-                "url": "new",
+                "url": "blog",
                 "namechil": "Tin tức"
               },
               {
-                "url": "orderplace",
+                "url": "place-register",
                 "namechil": "Địa điểm đặt hàng"
               },
               {
@@ -60,8 +58,6 @@
               }
             ]
           },
-         
-        
           {
             "url": "contact",
             "name": "Liên hệ"
@@ -117,7 +113,7 @@
         "home": {
           "title": "Trang chủ",
           "banner": "assets/banner2.jpg",
-          "buttonorder":"Đặt hàng",
+          "buttonorder": "Đặt hàng",
           "instruction": {
             "title": {
               "simple": "Chúng tôi cung cấp những gì?",
@@ -387,6 +383,16 @@
             "status": "Kết quả",
             "button": "Quay về trang chủ"
           }
+        },
+        "place_register": {
+          "title": "Danh sách địa điểm đặt hàng",
+          "province": "Tỉnh/ Thành phố",
+          "label_btn": "Tìm kiếm",
+          "option_province": "---Lựa chọn tỉnh---",
+          "sub_title": "Cửa hàng",
+          "notification": "Vui lòng chọn tỉnh/ thành phố",
+          "title_item": "Đại lý",
+          "address": "Địa chỉ"
         }
       },
       "error": {
@@ -400,9 +406,6 @@
         "term-click": "Hãy chọn ô \"Đồng ý\" "
       }
     },
-  
-    
-  
     {
       "header": {
         "banner": "Contact: 0904123456",
@@ -414,26 +417,23 @@
           {
             "url": "home",
             "name": "Utilities",
-            "target":"instruction"
+            "target": "instruction"
           },
-         
           {
             "url": "home",
             "name": "Rates",
-            "target":"price-table"
+            "target": "price-table"
           },
           {
             "url": "register",
             "name": "Ordering guide",
-            "target":"register"
+            "target": "register"
           },
-          
           {
-            
             "name": "Information",
             "submenuinfo": [
               {
-                "url": "new",
+                "url": "blog",
                 "namechil": "News"
               },
               {
@@ -446,13 +446,10 @@
               }
             ]
           },
-         
-        
           {
             "url": "contact",
             "name": "Contact"
           }
-        
         ]
       },
       "footer": {
@@ -504,7 +501,7 @@
         "home": {
           "title": "Homepage",
           "banner": "assets/banner2.jpg",
-          "buttonorder":"Order",
+          "buttonorder": "Order",
           "instruction": {
             "title": {
               "simple": "What we ",
@@ -519,17 +516,16 @@
                 "name": "4G technology \n speed 75Mbps",
                 "icon": "fa fa-wifi fa-stack-1x fa-inverse",
                 "description": "Supports up to 6 simultaneous wifi users at high speed, with unlimited bandwidth and speed."
-            
               },
               {
                 "name": "Get equipment in Vietnam \n when you go abroad",
                 "icon": "fa fa-users fa-stack-1x fa-inverse",
-                "description":"When we get to Japan, we are different from other providers at the same rate."
+                "description": "When we get to Japan, we are different from other providers at the same rate."
               },
               {
                 "name": "Compact device for continuous\n use for 12 hours",
                 "icon": "fa fa-tablet fa-stack-1x fa-inverse",
-                "description":"The compact size, wireless cumbersome, just charging the evening to meet daytime use."
+                "description": "The compact size, wireless cumbersome, just charging the evening to meet daytime use."
               }
             ]
           },
@@ -775,6 +771,16 @@
             "status": "Reserve status",
             "button": "Back to homepage"
           }
+        },
+        "place_register": {
+          "title": "List place order",
+          "province": "Province/ City",
+          "label_btn": "Search",
+          "option_province": "---Choose province---",
+          "sub_title": "Agency",
+          "notification": "Please choose Province/ city",
+          "title_item":"Agency",
+          "address":"Address"
         }
       },
       "error": {
@@ -787,7 +793,7 @@
         "invalid": "Invalid value. Please check the entire information.",
         "term-click": "Please click to \"Agree\" button"
       },
-      "order":"Order"
+      "order": "Order"
     }
   ]
 }
