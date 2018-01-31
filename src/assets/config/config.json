@@ -103,14 +103,32 @@
           "title": "Liên hệ",
           "name": "CÔNG TY VIỄN THÔNG QUỐC TẾ MOBIFONE ",
           "title_address": "Địa chỉ",
-          "address":"Số 5 ngõ 82, Duy Tân, P. Dịch Vọng Hậu, Q. Cầu Giấy, Tp. Hà Nội",
-          "title_hotline":"Hotline",
-          "number_hotline":"04.37831867 - 04.37831866",
-          "title_email":"Email",
-          "email":"lienhe@mobifone.com"  
+          "address": "Số 5 ngõ 82, Duy Tân, P. Dịch Vọng Hậu, Q. Cầu Giấy, Tp. Hà Nội",
+          "title_hotline": "Hotline",
+          "number_hotline": "04.37831867 - 04.37831866",
+          "title_email": "Email",
+          "email": "lienhe@mobifone.com"
         },
         "faq": {
-          "title": "Câu hỏi thường gặp"
+          "item_faq": [
+            {
+              "title": "Tổng quan",
+              "id": "tongquan"
+            },
+            {
+              "title": "Thủ tục đăng ký",
+              "id": "menu1"
+            },
+            {
+              "title": "Hủy bỏ và sửa đổi",
+              "id": "menu2"
+            },
+            {
+              "title": "Thu thập và sử dụng",
+              "id": "menu3"
+            }
+          ],
+          "title_faq": "Hỏi & Đáp"
         },
         "price-table": {
           "title": "Bảng giá",
@@ -444,7 +462,7 @@
                 "namechil": "News"
               },
               {
-                "url": "orderplace",
+                "url": "place-register",
                 "namechil": "Place of order"
               },
               {
@@ -497,15 +515,33 @@
         "contact": {
           "title": "Contact us",
           "name": "INTERNATIONAL TELECOMMUNICATIONS COMPANY MOBIFONE ",
-          "title_address":"Address",
-          "address":" No 5, 82 lane, Dich Vong Hau commune, Cau Giay district, Ha Noi",
-          "title_hotline":"Hotline",
-          "number_hotline":"04.37831867 - 04.37831866",
-          "title_email":"Email",
-          "email":"lienhe@mobifone.com"  
+          "title_address": "Address",
+          "address": " No 5, 82 lane, Dich Vong Hau commune, Cau Giay district, Ha Noi",
+          "title_hotline": "Hotline",
+          "number_hotline": "04.37831867 - 04.37831866",
+          "title_email": "Email",
+          "email": "lienhe@mobifone.com"
         },
         "faq": {
-          "title": "FAQS"
+          "item_faq": [
+            {
+              "title": "Overview",
+              "id": "tongquan"
+            },
+            {
+              "title": "Registration procedure",
+              "id": "menu1"
+            },
+            {
+              "title": "Remove and modify",
+              "id": "menu2"
+            },
+            {
+              "title": "Collect and use",
+              "id": "menu3"
+            }
+          ],
+          "title_faq": "Question & Answer"
         },
         "price-table": {
           "title": "Price table",
@@ -793,8 +829,8 @@
           "option_province": "---Choose province---",
           "sub_title": "Agency",
           "notification": "Please choose Province/ city",
-          "title_item":"Agency",
-          "address":"Address"
+          "title_item": "Agency",
+          "address": "Address"
         }
       },
       "error": {

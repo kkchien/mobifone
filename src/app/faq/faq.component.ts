@@ -19,13 +19,17 @@ export class FaqComponent implements OnInit, AfterViewInit {
   count: number = 10;
   show = [];
   total: number;
+  info_item ={}
   constructor(private faq_service: FaqService,
     private titleService: Title,
     private utils: UtilsService,
     private language: LanguageService) {
-      this.language.setSelect(4)
+    this.language.setSelect(4)
     this.language.type$.subscribe(
       type => {
+        // this.info = this.language.getTitle(type, 'app')['home'];
+        this.info_item = this.language.getTitle(type,'app')['faq'];
+        // console.log("log: "+ this.info_item.length);
         let title = this.language.getTitle(type, 'app').faq;
         this.titleService.setTitle(title.title)
         this.faq_service.getFAQs(type).subscribe(
@@ -37,6 +41,7 @@ export class FaqComponent implements OnInit, AfterViewInit {
             console.log("return map 0: "+ this.faqs.length);
             // this.show = this.faqs.slice((this.page - 1) * this.count, this.count * this.page);
             // this.total = Math.ceil((this.faqs.length / this.count)) * 10;
+
           },
           error => console.log(error)
         );

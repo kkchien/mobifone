@@ -15,6 +15,12 @@ a{
 ul{
     border: 1px solid rgb(233, 229, 229);
 }
-ul li{
+ul a{
     border-bottom: 1px solid #eeecec;
+    
+}
+ul a li{
+    font-size: 16px;
+    padding: 5px;
+    padding-left: 15px;
 }
