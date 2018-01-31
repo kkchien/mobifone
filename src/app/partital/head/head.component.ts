@@ -35,13 +35,11 @@ export class HeadComponent implements OnInit {
     );
   }
   ngOnInit() {
-    this.data = this._language.getTitle(this.type, 'header');
     
   }
   setLanguageType(type) {
     this._language.setType(type);
     this.type = type;
-    // this._language.getTitle(this.type, 'header');
   }
 
   doSelect(id: any) {
@@ -66,7 +64,7 @@ export class HeadComponent implements OnInit {
   setId(id:any)
   {
     this._language.setId(id);
-    console.log("menu id: "+ id);
+    // console.log("menu id: "+ id);
    
   }
 

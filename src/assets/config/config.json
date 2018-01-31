@@ -19,7 +19,7 @@
   "language": [
     {
       "header": {
-        "banner": "Thông tin liên hệ: 0904123456",
+        "banner": "Thông tin liên hệ: 18001090",
         "menu": [
           {
             "url": "home",
@@ -101,7 +101,7 @@
       "app": {
         "contact": {
           "title": "Liên hệ",
-          "name": "CÔNG TY VIỄN THÔNG QUỐC TẾ MOBIFONE ",
+          "name": "TRUNG TÂM VIỄN THÔNG QUỐC TẾ MOBIFONE ",
           "title_address": "Địa chỉ",
           "address": "Số 5 ngõ 82, Duy Tân, P. Dịch Vọng Hậu, Q. Cầu Giấy, Tp. Hà Nội",
           "title_hotline": "Hotline",
@@ -145,14 +145,14 @@
               "strong": ""
             },
             "p": [
-              "Chúng tôi cung cấp giải pháp để có được Internet trong chuyến du lịch của bạn: Dịch vụ cho thuê WiFi .",
+              "Chúng tôi cung cấp giải pháp để có được Internet trong chuyến du lịch của bạn: Dịch vụ cho thuê WiFi.",
               "Kết nối mọi lúc mọi nơi, hỗ trợ hơn 60 quốc gia trên thế giới."
             ],
             "item": [
               {
                 "name": "Công nghệ 4G\n tốc độ 75Mbps",
                 "icon": "fa fa-wifi fa-stack-1x fa-inverse",
-                "description": "Hỗ trợ lên đến 6 người truy cập wifi cùng lúc với tốc độ cao, không giới hạn lưu lượng và tốc độ truy cập."
+                "description": "Hỗ trợ lên đến 5 người truy cập wifi cùng lúc với tốc độ cao, không giới hạn lưu lượng và tốc độ truy cập."
               },
               {
                 "name": "Nhận thiết bị tại Việt Nam\n dùng ngay khi tới nước ngoài",
@@ -162,7 +162,7 @@
               {
                 "name": "Thiết bị nhỏ gọn\n sử dụng liên tục trong 12h",
                 "icon": "fa fa-tablet fa-stack-1x fa-inverse",
-                "description": "Kích thước nhỏ gọn, không dây nhợ rườm rà, chỉ cần sạc buổi tối để đáp ứng ban ngày sử dụng."
+                "description": "Kích thước nhỏ gọn, chỉ cần sạc buổi tối để đáp ứng ban ngày sử dụng."
               }
             ]
           },
@@ -179,7 +179,7 @@
               },
               {
                 "name": "Bước 2",
-                "way": "Thiết bị sẽ được giao ít nhất trước 1 ngày bạn khởi hành",
+                "way": "Nhận thiết bị trước khi khởi hành ít nhất 12 tiếng",
                 "image": "assets/img/register/icon-order-2.png"
               },
               {
@@ -189,7 +189,7 @@
               },
               {
                 "name": "Bước 4",
-                "way": "Thiết bị sẽ được thu lại sau 1 ngày bạn về",
+                "way": "Hoàn trả thiết bị sau khi kết thúc chuyến đi",
                 "image": "assets/img/register/icon-order-4.png"
               }
             ],
@@ -433,7 +433,7 @@
     },
     {
       "header": {
-        "banner": "Contact: 0904123456",
+        "banner": "Contact: 18001090",
         "menu": [
           {
             "url": "home",
@@ -565,7 +565,7 @@
               {
                 "name": "4G technology \n speed 75Mbps",
                 "icon": "fa fa-wifi fa-stack-1x fa-inverse",
-                "description": "Supports up to 6 simultaneous wifi users at high speed, with unlimited bandwidth and speed."
+                "description": "Supports up to 5 simultaneous wifi users at high speed, with unlimited bandwidth and speed."
               },
               {
                 "name": "Get equipment in Vietnam \n when you go abroad",
@@ -575,7 +575,7 @@
               {
                 "name": "Compact device for continuous\n use for 12 hours",
                 "icon": "fa fa-tablet fa-stack-1x fa-inverse",
-                "description": "The compact size, wireless cumbersome, just charging the evening to meet daytime use."
+                "description": "The compact size, just charging the evening to meet daytime use."
               }
             ]
           },
@@ -592,7 +592,7 @@
               },
               {
                 "name": "Step 2",
-                "way": "The equipment will be delivered at least 1 day before your departure.",
+                "way": "Get the equipment before departure for at least 12 hours.",
                 "image": "assets/img/register/icon-order-2.png"
               },
               {
@@ -602,7 +602,7 @@
               },
               {
                 "name": "Step 4",
-                "way": "The equipment will be returned after 1 day.",
+                "way": "Return the equipment after the end of the trip.",
                 "image": "assets/img/register/icon-order-4.png"
               }
             ],

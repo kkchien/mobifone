@@ -1,94 +1,79 @@
 <div class="container text-footer">
-    <div class="col-xs-12">
-        <hr>
-      </div>
+  <div class="col-xs-12">
+    <hr>
+  </div>
   <div class="">
-      <!-- <div class="col-xs-12">
+    <!-- <div class="col-xs-12">
           <hr>
       </div> -->
-      <div class="col-sm-5 a-footer" style="margin-bottom:10px;">
-        <div class="col-xs-4">
-          <div class="">
-            <a [routerLink]="info.link.link1.url" ><strong>{{ info.link.link1.title }}</strong></a>
-          </div>
-          <div class="">
-            <a [routerLink]="info.link.link2.url" class="a-footer"><strong>{{ info.link.link2.title }}</strong></a>
-          </div>
-          <div class="">
-            <a [routerLink]="info.link.link3.url" class="a-footer"> <strong>{{ info.link.link3.title }}</strong></a>
-          </div>
-          <div class="">
-            <a [routerLink]="info.link.link4.url" class="a-footer"><strong>{{ info.link.link4.title }}</strong></a>
-          </div>
-        </div>
-  
-        <div class="col-xs-8">
-          <div class="">
-            <a [routerLink]="info.link.link5.url"><strong>{{ info.link.link5.title }}</strong></a>
-          </div>
-          <div class="">
-            <a [routerLink]="info.link.link6.url"><strong>{{ info.link.link6.title }}</strong></a>
-          </div>
-          <div class="">
-            <a [routerLink]="info.link.link7.url"><strong>{{ info.link.link7.title }}</strong></a>
-          </div>
-        </div>
-      </div>
-      <div class="col-xs-12 visible-xs">
-          <hr>  
-        </div>
-      <div class="col-sm-4 col-xs-12">
-        <div class="col-sm-12 font-16">
-          <p class="footer-color"> <strong>{{ info.second }}</strong></p>
-          <img src="../../../assets/payment.png" width="90%">
-        </div>
-      </div>
-      <div class="col-xs-12 visible-xs">
-        <hr>  
-      </div>   
-      <div class="col-sm-3 col-xs-12">
-        <p class="col-sm-12 font-14 footer-color">
-          <strong>{{ info.last }}</strong>
+    <div class="col-sm-5 a-footer" style="margin-bottom:10px;">
+     
+      <ul *ngFor="let mn of data.menu; let i =index">
+        <li *ngIf="i != 4">
+          <a (click)="doSelect(i)" [routerLink]="mn.url" href="">{{mn.name}}</a>
+        </li>
+      </ul>
+    </div>
+    <div class="col-xs-12 visible-xs">
+      <hr>
+    </div>
+    <div class="col-sm-4 col-xs-12">
+      <div class="col-sm-12 font-16">
+        <p class="footer-color">
+          <strong>{{ info.second }}</strong>
         </p>
-        <p class="col-sm-12">
-          <!-- facebook -->
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x text-primary"></i>
-            <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-          </span>
-
-          <!-- Youtube -->
-          <span class="fa-stack fa-lg">
-              <i class="fa fa-square-o fa-stack-2x text-primary"></i>
-              <i class="fa fa-youtube fa-stack-1x  text-primary"></i>
-            </span>
-
-          <!-- instagram -->
-          <span class="fa-stack fa-lg">
-              <i class="fa fa-square-o fa-stack-2x text-primary"></i>
-              <i class="fa fa-instagram fa-stack-1x text-primary"></i>
-            </span>
-
-          <!-- Google -->
-          <span class="fa-stack fa-lg">
-              <i class="fa fa-circle fa-stack-2x text-primary"></i>
-              <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
-            </span>
-          </p>
+        <img src="../../../assets/payment.png" width="90%">
       </div>
+    </div>
+    <div class="col-xs-12 visible-xs">
+      <hr>
+    </div>
+    <div class="col-sm-3 col-xs-12">
+      <p class="col-sm-12 font-14 footer-color">
+        <strong>{{ info.last }}</strong>
+      </p>
+      <p class="col-sm-12">
+        <!-- facebook -->
+        <span class="fa-stack fa-lg">
+          <i class="fa fa-circle fa-stack-2x text-primary"></i>
+          <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+        </span>
+
+        <!-- Youtube -->
+        <span class="fa-stack fa-lg">
+          <i class="fa fa-square-o fa-stack-2x text-primary"></i>
+          <i class="fa fa-youtube fa-stack-1x  text-primary"></i>
+        </span>
+
+        <!-- instagram -->
+        <span class="fa-stack fa-lg">
+          <i class="fa fa-square-o fa-stack-2x text-primary"></i>
+          <i class="fa fa-instagram fa-stack-1x text-primary"></i>
+        </span>
+
+        <!-- Google -->
+        <span class="fa-stack fa-lg">
+          <i class="fa fa-circle fa-stack-2x text-primary"></i>
+          <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+        </span>
+      </p>
+    </div>
   </div>
   <div class="clearfix"></div>
   <div class="col-xs-12">
-      <hr>
+    <hr>
   </div>
   <div class="col-xs-12 row">
     <div class="col-xs-6">
-        © <strong>Copyright 2017</strong> - MobiFone
+      ©
+      <strong>Copyright 2017</strong> - MobiFone
     </div>
-    <div class="col-xs-6" style="color: #5e5e5e"> <strong>{{data.banner}}</strong> </div>
-   
+    <div class="col-xs-6" style="color: #5e5e5e">
+      <strong>{{data.banner}}</strong>
+    </div>
+
   </div>
   <div class="col-xs-12">
-      <br>
+    <br>
   </div>
 </div>

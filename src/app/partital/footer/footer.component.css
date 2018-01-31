@@ -1,0 +1,31 @@
+
+ /* ul li a{
+    text-decoration: none;
+    color:rgb(73, 70, 70);
+    font-weight: 600;
+} */
+ul li a:hover{
+    color: rgb(45, 129, 224);
+} 
+
+ul{
+    padding: 0 !important;
+    margin: 6px 0 0 -3px !important;
+    list-style: none !important;
+    display: inline-block !important;
+}
+ul li{
+    float: left;
+    display: block;
+    padding: 0;
+}
+ul li a{
+    font-size: 18px;
+    font-weight: 600;
+    display: block;
+    padding: 5px 8px;
+    margin: 3px;
+    text-decoration: none;
+    color:#333;
+}
+

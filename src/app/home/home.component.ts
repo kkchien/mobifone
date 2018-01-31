@@ -30,41 +30,22 @@ export class HomeComponent implements OnInit,AfterViewInit {
     this.language.divId$.subscribe(id=>{
       this.divId = id;
       console.log("Div id: "+ this.divId);
-    });
-
-    
-    // console.log("Value recycle: "+ this.divId);
+    })
   }
  
  
   ngAfterViewInit(){
-    let self = this;
-
-    $('#navbar-main a').on('click', function(){
-      var scrollTo = $(this).attr('data-scrollTo');
-      $('body, html').animate({
-        "scrollTop": $('#'+scrollTo).offset().top
-      }, 1000 );
-      return false;
-      
-    });
-
     this._route.queryParams.subscribe(
       params => {
         if(params['target'] != undefined){
           let target = params['target'];
           this.goTo(target);
-        }
-      }
-    );
-
-  
+        }});
   }
 
   ngOnInit() {
     localStorage.setItem('select_tab', '0');
-    this.language.setSelect(0)
-    
+    this.language.setSelect(0);
   }
 
   goTo(id:any){

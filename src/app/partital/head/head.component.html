@@ -23,7 +23,8 @@
     <div class="navbar-collapse collapse main-menu">
       <ul class="nav navbar-nav">
         <li class="dropdown itemMenu" *ngFor="let m of data.menu; let i = index;">
-          <a class="text-uppercase" href="javascript:void(0)"  (click)="doSelect(i)" (click)="setId(m.url)" class="text-default dropdown-toggle" data-toggle="dropdown"
+       
+          <a class="text-uppercase" href="javascript:void(0)" [style.font-weight]="i==0 ? 'bold' : normal" (click)="doSelect(i)" class="text-default dropdown-toggle" data-toggle="dropdown"
             [ngClass]="{'menu-active':select_tab == i}">
             {{m.name}}
             <span *ngIf="i==4" class="caret"></span>
