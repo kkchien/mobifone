@@ -38,19 +38,15 @@
       <div class="col-xs-12 col-sm-6  contact-detail">
         <div class="row infor">
           <div class="content-info">
-            <strong class="title-company">CÔNG TY TNHH DỊCH VỤ VÀ THƯƠNG MẠI VJC </strong>
+            <strong class="title-company"> {{info.name}}</strong>
             <br>
             <br>
-            <div>Địa chỉ HCM:16 Trương Định F16 Quận 3, HCM </div>
-            <div>Hotline:
-              <span style="color:rgb(67, 224, 224)">(028) 7-0335-888</span>
+            <div>{{info.title_address}}: {{info.address}}:</div>
+            <div>{{info.title_hotline}}: 
+              <span style="color:rgb(67, 224, 224)">{{info.number_hotline}}</span>
             </div>
-            <div>Email:infor@jetfivn.com</div>
-            <div>Địa chỉ HN: Tầng 9, tòa nhà Gelex, 52 Lê Đại Hành, Quận Hai Bà Trung, HN</div>
-            <div>Hotline:
-              <span style="color:rgb(67, 224, 224)">0935319976</span>
-            </div>
-            <div>Email: info@jetfivn.com</div>
+            <div> {{info.title_email}}: {{info.email}}</div>
+            
           </div>
         </div>
       </div>

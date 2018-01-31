@@ -100,7 +100,14 @@
       },
       "app": {
         "contact": {
-          "title": "Liên hệ"
+          "title": "Liên hệ",
+          "name": "CÔNG TY VIỄN THÔNG QUỐC TẾ MOBIFONE ",
+          "title_address": "Địa chỉ",
+          "address":"Số 5 ngõ 82, Duy Tân, P. Dịch Vọng Hậu, Q. Cầu Giấy, Tp. Hà Nội",
+          "title_hotline":"Hotline",
+          "number_hotline":"04.37831867 - 04.37831866",
+          "title_email":"Email",
+          "email":"lienhe@mobifone.com"  
         },
         "faq": {
           "title": "Câu hỏi thường gặp"
@@ -488,7 +495,14 @@
       },
       "app": {
         "contact": {
-          "title": "Contact us"
+          "title": "Contact us",
+          "name": "INTERNATIONAL TELECOMMUNICATIONS COMPANY MOBIFONE ",
+          "title_address":"Address",
+          "address":" No 5, 82 lane, Dich Vong Hau commune, Cau Giay district, Ha Noi",
+          "title_hotline":"Hotline",
+          "number_hotline":"04.37831867 - 04.37831866",
+          "title_email":"Email",
+          "email":"lienhe@mobifone.com"  
         },
         "faq": {
           "title": "FAQS"
