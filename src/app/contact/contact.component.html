@@ -2,33 +2,33 @@
 
   <div class="row col-xs-12 row-soccial">
     <div class="col-md-4 text-center">
-      <a href="#">
+      <a href={{info.facebook}} target="blank">
         <span class="fa-stack fa-4x">
           <i class="fa fa-circle fa-stack-2x " style="color:rgb(255, 255, 255)"></i>
           <i class="fa fa-facebook fa-stack-1x " style="color:rgb(29, 85, 226)"></i>
         </span>
-        <p style="color:rgb(105, 102, 98)">facebook.com/mobifone</p>
+        <p style="color:rgb(105, 102, 98)">{{info.facebook}}</p>
         <br/>
       </a>
     </div>
     <div class="col-md-4 text-center">
-      <a href="#">
+      <a href="{{info.youtube}}" target="blank">
         <span class="fa-stack fa-4x">
           <i class="fa fa-circle fa-stack-2x " style="color:rgb(250, 251, 253)"></i>
           <i class="fa fa-youtube-square fa-stack-1x" style="color:rgb(216, 54, 62)"></i>
         </span>
-        <p style="color:rgb(105, 102, 98)">youtube.com/mobifone</p>
+        <p style="color:rgb(105, 102, 98)">{{info.youtube}}</p>
         <br/>
       </a>
     </div>
     <div class="col-md-4 text-center">
-      <a href="#">
+      <a href="{{info.instagram}}" target="blank">
         <span class="fa-stack fa-4x">
           <i class="fa fa-circle fa-stack-2x " style="color:rgb(247, 249, 252)"></i>
           <i class="fa fa-instagram fa-stack-1x" style="color:rgb(29, 202, 58)"></i>
           <!-- <i class="fa fa-circle fa-stack-2x text-primary"></i> -->
         </span>
-        <p style="color:rgb(105, 102, 98)">instagram.com/mobifone</p>
+        <p style="color:rgb(105, 102, 98)">{{info.instagram}}</p>
         <br/>
       </a>
     </div>
@@ -40,12 +40,12 @@
           <div class="content-info">
             <strong class="title-company"> {{info.name}}</strong>
             <br>
-            <br>
-            <div>{{info.title_address}}: {{info.address}}:</div>
-            <div>{{info.title_hotline}}: 
+            <div> <strong>{{info.title_address}}</strong> : {{info.address}}:</div>
+            <div> <strong>{{info.title_hotline}}</strong> : 
               <span style="color:rgb(67, 224, 224)">{{info.number_hotline}}</span>
             </div>
-            <div> {{info.title_email}}: {{info.email}}</div>
+            <div> <strong>{{info.title_email}}</strong> : {{info.email}}</div>
+            <div><strong>{{info.representative}}</strong>: {{info.name_repres}}</div>
             
           </div>
         </div>

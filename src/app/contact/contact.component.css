@@ -36,10 +36,11 @@ background-position: center;
     margin-top: 15px;
 }
 .title-company{
-    font-size:18px;
+    font-size:14px;
+    text-transform: uppercase;
 }
 .content-info{
-    padding: 30px 10px 76px 25px;
+    padding: 35px 10px 76px 25px;
     
 }
 .content-info div{

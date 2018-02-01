@@ -100,14 +100,19 @@
       },
       "app": {
         "contact": {
-          "title": "Liên hệ",
-          "name": "TRUNG TÂM VIỄN THÔNG QUỐC TẾ MOBIFONE ",
+          "facebook": "https://www.facebook.com/mobifone/",
+          "youtube": "https://www.youtube.com/user/VMSMobiFone",
+          "instagram": "#",
+          "title": "Văn phòng",
+          "name": "Phòng KHDN - Công ty Dịch vụ MobiFone khu vực 1",
           "title_address": "Địa chỉ",
-          "address": "Số 5 ngõ 82, Duy Tân, P. Dịch Vọng Hậu, Q. Cầu Giấy, Tp. Hà Nội",
-          "title_hotline": "Hotline",
-          "number_hotline": "04.37831867 - 04.37831866",
+          "address": " Tầng 4 tòa nhà MobiFone/số 5/82 phố Duy Tân, Quận Cầu Giấy, Hà Nội, Việt Nam",
+          "title_hotline": "Điện thoại",
+          "number_hotline": "+84 898.583.333 ",
           "title_email": "Email",
-          "email": "lienhe@mobifone.com"
+          "email": "trung.ho@mobifone.vn",
+          "representative": "Người đại diên",
+          "name_repres":"Hồ Thành Trung"
         },
         "faq": {
           "item_faq": [
@@ -150,19 +155,19 @@
             ],
             "item": [
               {
-                "name": "Công nghệ 4G\n tốc độ 75Mbps",
+                "name": "Công nghệ 4G, tốc độ Download/Upload \n tối đa 150Mbps/50Mbps",
                 "icon": "fa fa-wifi fa-stack-1x fa-inverse",
-                "description": "Hỗ trợ lên đến 5 người truy cập wifi cùng lúc với tốc độ cao, không giới hạn lưu lượng và tốc độ truy cập."
+                "description": "Hỗ trợ lên đến 5 người truy cập wifi cùng lúc, không giới hạn dung lượng với 500MB tốc độ cao/ngày."
               },
               {
-                "name": "Nhận thiết bị tại Việt Nam\n dùng ngay khi tới nước ngoài",
+                "name": "Nhận thiết bị tại Việt Nam- Sử dụng ngay\n khi tới nước ngoài",
                 "icon": "fa fa-users fa-stack-1x fa-inverse",
-                "description": "Hưởng gói cước rẻ hơn tự thuê khi tới Nhật, chúng tôi khác biệt với nhà cung cấp khác với cùng mức phí thuê."
+                "description": "Thiết bị được khách hàng nhận tại hệ thống bán hàng của MobiFone với thủ tục đăng ký đơn giản và có thể truy cập dịch vụ dữ liệu di động ở nước ngoài. Với dung lượng Pin 5.000mAh, bạn có thể sử dụng dịch vụ liên tục tới 12h/ngày ."
               },
               {
-                "name": "Thiết bị nhỏ gọn\n sử dụng liên tục trong 12h",
+                "name": "Thiết bị nhỏ gọn, sử dụng dễ dàng,\n tiện lợi",
                 "icon": "fa fa-tablet fa-stack-1x fa-inverse",
-                "description": "Kích thước nhỏ gọn, chỉ cần sạc buổi tối để đáp ứng ban ngày sử dụng."
+                "description": "Kích thước thiết bị chỉ bằng một chiếc điện thoại được đựng trong túi bọc gồm dây sạc, sổ tay hướng dẫn sử dụng, bạn có thể mang theo người trong mọi chuyến đi ra nước ngoài.."
               }
             ]
           },
@@ -174,12 +179,12 @@
             "step": [
               {
                 "name": "Bước 1",
-                "way": "Đặt & thanh toán online ít nhất trước 5 ngày khởi hành",
+                "way": "Đặt & thanh toán online ít nhất trước 2 ngày khởi hành",
                 "image": "assets/img/register/icon-order-1.png"
               },
               {
                 "name": "Bước 2",
-                "way": "Nhận thiết bị trước khi khởi hành ít nhất 12 tiếng",
+                "way": "Bạn sẽ nhận thiết bị ít nhất trước 1 ngày bạn khởi hành",
                 "image": "assets/img/register/icon-order-2.png"
               },
               {
@@ -189,7 +194,7 @@
               },
               {
                 "name": "Bước 4",
-                "way": "Hoàn trả thiết bị sau khi kết thúc chuyến đi",
+                "way": "Bạn sẽ hoàn trả lại thiết bị theo thời hạn quy định trong thỏa thuận thuê",
                 "image": "assets/img/register/icon-order-4.png"
               }
             ],
@@ -513,14 +518,19 @@
       },
       "app": {
         "contact": {
-          "title": "Contact us",
-          "name": "INTERNATIONAL TELECOMMUNICATIONS COMPANY MOBIFONE ",
-          "title_address": "Address",
-          "address": " No 5, 82 lane, Dich Vong Hau commune, Cau Giay district, Ha Noi",
-          "title_hotline": "Hotline",
-          "number_hotline": "04.37831867 - 04.37831866",
+          "facebook": "https://www.facebook.com/mobifone/",
+          "youtube": "https://www.youtube.com/user/VMSMobiFone",
+          "instagram": "#",
+          "title": "Văn phòng",
+          "name": "Department of Mobility - MobiFone Service Company Region 1",
+          "title_address": "Địa chỉ",
+          "address": " Floor 4 MobiFone Building, No. 5/82, Duy Tan Street, Cau Giay District, Hanoi, Vietnam",
+          "title_hotline": "Phone",
+          "number_hotline": "+84 898.583.333 ",
           "title_email": "Email",
-          "email": "lienhe@mobifone.com"
+          "email": "trung.ho@mobifone.vn",
+          "representative": "Representative",
+          "name_repres":"Ho Thanh Trung"
         },
         "faq": {
           "item_faq": [
@@ -563,19 +573,19 @@
             ],
             "item": [
               {
-                "name": "4G technology \n speed 75Mbps",
+                "name": "4G technology, download / upload speeds up to\n 150Mbps / 50Mbps",
                 "icon": "fa fa-wifi fa-stack-1x fa-inverse",
-                "description": "Supports up to 5 simultaneous wifi users at high speed, with unlimited bandwidth and speed."
+                "description": "Support up to 5 simultaneous wifi accesses, unlimited capacity with 500MB high speed / day."
               },
               {
-                "name": "Get equipment in Vietnam \n when you go abroad",
+                "name": "Get equipment in Vietnam - Use right when\n you go abroad",
                 "icon": "fa fa-users fa-stack-1x fa-inverse",
-                "description": "When we get to Japan, we are different from other providers at the same rate."
+                "description": "The equipment is received at the MobiFone sales system with simple registration procedures and can access mobile data services abroad. With a capacity of 5.000mAh battery, you can use continuous service up to 12h / day."
               },
               {
-                "name": "Compact device for continuous\n use for 12 hours",
+                "name": "Compact, easy to use,\n convenient",
                 "icon": "fa fa-tablet fa-stack-1x fa-inverse",
-                "description": "The compact size, just charging the evening to meet daytime use."
+                "description": "The size of the device is the same as that of a phone that comes in a bag that includes a charging cable, a manual, and a travel guide.."
               }
             ]
           },
@@ -587,22 +597,22 @@
             "step": [
               {
                 "name": "Step 1",
-                "way": "Place & pay online at least 5 days before departure.",
+                "way": "Place & pay online at least 2 days before departure.",
                 "image": "assets/img/register/icon-order-1.png"
               },
               {
                 "name": "Step 2",
-                "way": "Get the equipment before departure for at least 12 hours.",
+                "way": "You will receive the device at least 1 day before your departure.",
                 "image": "assets/img/register/icon-order-2.png"
               },
               {
                 "name": "Step 3",
-                "way": "Wifi connection anytime, anywhere, easily.",
+                "way": "Wifi connection anytime, anywhere an easy way.",
                 "image": "assets/img/register/icon-order-3.png"
               },
               {
                 "name": "Step 4",
-                "way": "Return the equipment after the end of the trip.",
+                "way": "You will return the equipment within the time limit specified in the lease agreement.",
                 "image": "assets/img/register/icon-order-4.png"
               }
             ],
