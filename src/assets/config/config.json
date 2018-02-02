@@ -195,12 +195,12 @@
             "step": [
               {
                 "name": "Bước 1",
-                "way": "Đặt & thanh toán online ít nhất trước 2 ngày khởi hành",
+                "way": "Đặt và thanh toán trước ngày khởi hành",
                 "image": "assets/img/register/icon-order-1.png"
               },
               {
                 "name": "Bước 2",
-                "way": "Bạn sẽ nhận thiết bị ít nhất trước 1 ngày bạn khởi hành",
+                "way": "Nhận thiết bị trước khi khởi hành",
                 "image": "assets/img/register/icon-order-2.png"
               },
               {
@@ -210,7 +210,7 @@
               },
               {
                 "name": "Bước 4",
-                "way": "Bạn sẽ hoàn trả lại thiết bị theo thời hạn quy định trong thỏa thuận thuê",
+                "way": "Hoàn trả thiết bị sau khi kết thúc chuyến đi",
                 "image": "assets/img/register/icon-order-4.png"
               }
             ],
@@ -625,22 +625,22 @@
             "step": [
               {
                 "name": "Step 1",
-                "way": "Place & pay online at least 2 days before departure.",
+                "way": "Place and pay before departure",
                 "image": "assets/img/register/icon-order-1.png"
               },
               {
                 "name": "Step 2",
-                "way": "You will receive the device at least 1 day before your departure.",
+                "way": "Get the device before departure",
                 "image": "assets/img/register/icon-order-2.png"
               },
               {
                 "name": "Step 3",
-                "way": "Wifi connection anytime, anywhere an easy way.",
+                "way": "Connect wifi anytime, anywhere easily",
                 "image": "assets/img/register/icon-order-3.png"
               },
               {
                 "name": "Step 4",
-                "way": "You will return the equipment within the time limit specified in the lease agreement.",
+                "way": "Return the equipment after the trip ends",
                 "image": "assets/img/register/icon-order-4.png"
               }
             ],
