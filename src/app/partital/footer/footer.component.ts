@@ -19,12 +19,15 @@ export class FooterComponent implements OnInit {
   // payment = require('./payment.jpg');
   type: number;
   data: any;
+  socials: any;
 
   constructor(private _language: LanguageService, private _router: Router) {
     this._language.type$.subscribe(
       type => {
         this.info = this._language.getTitle(type, 'footer');
         this.data = this._language.getTitle(type, 'header');
+        this.socials = this._language.getTitle(type, 'app')['contact'];
+        // console.log("mang: "+ this.socials);
         // console.log("menu: "+ this.menu);
       }
     );

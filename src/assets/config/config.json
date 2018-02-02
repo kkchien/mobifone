@@ -100,9 +100,25 @@
       },
       "app": {
         "contact": {
-          "facebook": "https://www.facebook.com/mobifone/",
-          "youtube": "https://www.youtube.com/user/VMSMobiFone",
-          "instagram": "#",
+          "contact_social":[
+            {
+              "url":"https://www.facebook.com/mobifone/",
+              "icon": "fa fa-facebook",
+              "style":"color:rgb(29, 85, 226)"
+            },
+            {
+              "url":"https://www.youtube.com/user/VMSMobiFone",
+              "icon": "fa fa-youtube",
+              "style":"color:rgb(216, 54, 62)"
+            },
+            {
+              "url":"#",
+              "icon": "fa fa-instagram",
+              "style":"color:rgb(29, 202, 58)"
+            }
+
+          ],
+         
           "title": "Văn phòng",
           "name": "Phòng KHDN - Công ty Dịch vụ MobiFone khu vực 1",
           "title_address": "Địa chỉ",
@@ -518,12 +534,24 @@
       },
       "app": {
         "contact": {
-          "facebook": "https://www.facebook.com/mobifone/",
-          "youtube": "https://www.youtube.com/user/VMSMobiFone",
-          "instagram": "#",
+          "contact_social":[
+            {
+              "url":"https://www.facebook.com/mobifone/",
+              "icon": "fa fa-facebook"
+            },
+            {
+              "url":"https://www.youtube.com/user/VMSMobiFone",
+              "icon": "fa fa-youtube"
+            },
+            {
+              "url":"#",
+              "icon": "fa fa-instagram"
+            }
+
+          ],
           "title": "Văn phòng",
           "name": "Department of Mobility - MobiFone Service Company Region 1",
-          "title_address": "Địa chỉ",
+          "title_address": "Address",
           "address": " Floor 4 MobiFone Building, No. 5/82, Duy Tan Street, Cau Giay District, Hanoi, Vietnam",
           "title_hotline": "Phone",
           "number_hotline": "+84 898.583.333 ",

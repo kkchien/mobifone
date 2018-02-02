@@ -1,34 +1,13 @@
 <div class="container" style="min-height:30vh; ">
 
-  <div class="row col-xs-12 row-soccial">
-    <div class="col-md-4 text-center">
-      <a href={{info.facebook}} target="blank">
+  <div class="row col-xs-12 row-soccial" >
+    <div class="col-md-4 text-center" *ngFor="let social of info.contact_social">
+      <a href={{social.url}} target="blank">
         <span class="fa-stack fa-4x">
           <i class="fa fa-circle fa-stack-2x " style="color:rgb(255, 255, 255)"></i>
-          <i class="fa fa-facebook fa-stack-1x " style="color:rgb(29, 85, 226)"></i>
+          <i class="{{social.icon}} fa-stack-1x"></i>
         </span>
-        <p style="color:rgb(105, 102, 98)">{{info.facebook}}</p>
-        <br/>
-      </a>
-    </div>
-    <div class="col-md-4 text-center">
-      <a href="{{info.youtube}}" target="blank">
-        <span class="fa-stack fa-4x">
-          <i class="fa fa-circle fa-stack-2x " style="color:rgb(250, 251, 253)"></i>
-          <i class="fa fa-youtube-square fa-stack-1x" style="color:rgb(216, 54, 62)"></i>
-        </span>
-        <p style="color:rgb(105, 102, 98)">{{info.youtube}}</p>
-        <br/>
-      </a>
-    </div>
-    <div class="col-md-4 text-center">
-      <a href="{{info.instagram}}" target="blank">
-        <span class="fa-stack fa-4x">
-          <i class="fa fa-circle fa-stack-2x " style="color:rgb(247, 249, 252)"></i>
-          <i class="fa fa-instagram fa-stack-1x" style="color:rgb(29, 202, 58)"></i>
-          <!-- <i class="fa fa-circle fa-stack-2x text-primary"></i> -->
-        </span>
-        <p style="color:rgb(105, 102, 98)">{{info.instagram}}</p>
+        <p style="color:rgb(105, 102, 98)">{{social.url}}</p>
         <br/>
       </a>
     </div>

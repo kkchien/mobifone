@@ -7,7 +7,7 @@
           <hr>
       </div> -->
     <div class="col-sm-5 a-footer" style="margin-bottom:10px;">
-     
+
       <ul *ngFor="let mn of data.menu; let i =index">
         <li *ngIf="i != 4">
           <a (click)="doSelect(i)" [routerLink]="mn.url" href="">{{mn.name}}</a>
@@ -32,30 +32,17 @@
       <p class="col-sm-12 font-14 footer-color">
         <strong>{{ info.last }}</strong>
       </p>
-      <p class="col-sm-12">
+      <p class="col-sm-4" *ngFor="let social of socials.contact_social">
         <!-- facebook -->
-        <span class="fa-stack fa-lg">
-          <i class="fa fa-circle fa-stack-2x text-primary"></i>
-          <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-        </span>
 
-        <!-- Youtube -->
-        <span class="fa-stack fa-lg">
-          <i class="fa fa-square-o fa-stack-2x text-primary"></i>
-          <i class="fa fa-youtube fa-stack-1x  text-primary"></i>
-        </span>
+        <a class="col-xs-4" href={{social.url}} target="blank">
+          <span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x text-primary"></i>
+            <i class="{{social.icon}} fa-stack-1x fa-inverse"></i>
+          </span>
+        </a>
 
-        <!-- instagram -->
-        <span class="fa-stack fa-lg">
-          <i class="fa fa-square-o fa-stack-2x text-primary"></i>
-          <i class="fa fa-instagram fa-stack-1x text-primary"></i>
-        </span>
 
-        <!-- Google -->
-        <span class="fa-stack fa-lg">
-          <i class="fa fa-circle fa-stack-2x text-primary"></i>
-          <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
-        </span>
       </p>
     </div>
   </div>
