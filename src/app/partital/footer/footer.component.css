@@ -28,4 +28,10 @@ ul li a{
     text-decoration: none;
     color:#333;
 }
+.colorBlue{
+    color:  rgb(78, 115, 238);
+}
+.colorRed{
+    color: red;
+}
 

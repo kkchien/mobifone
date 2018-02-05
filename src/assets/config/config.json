@@ -104,17 +104,17 @@
             {
               "url":"https://www.facebook.com/mobifone/",
               "icon": "fa fa-facebook",
-              "style":"color:rgb(29, 85, 226)"
+              "style":"rgb(62, 94, 238)"
             },
             {
               "url":"https://www.youtube.com/user/VMSMobiFone",
-              "icon": "fa fa-youtube",
-              "style":"color:rgb(216, 54, 62)"
+              "icon": "fa fa-youtube-play",
+              "style":"rgb(230, 20, 20)"
             },
             {
-              "url":"#",
-              "icon": "fa fa-instagram",
-              "style":"color:rgb(29, 202, 58)"
+              "url":"mailto:trung.ho@mobifone.vn",
+              "icon": "fa fa-envelope",
+              "style":"rgb(62, 94, 238)"
             }
 
           ],
@@ -126,7 +126,8 @@
           "title_hotline": "Điện thoại",
           "number_hotline": "+84 898.583.333 ",
           "title_email": "Email",
-          "email": "trung.ho@mobifone.vn",
+          "name_email":"trung.ho@mobifone.vn",
+          "email": "mailto:trung.ho@mobifone.vn",
           "representative": "Người đại diên",
           "name_repres":"Hồ Thành Trung"
         },

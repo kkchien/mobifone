@@ -32,12 +32,12 @@
       <p class="col-sm-12 font-14 footer-color">
         <strong>{{ info.last }}</strong>
       </p>
-      <p class="col-sm-4" *ngFor="let social of socials.contact_social">
+      <p class="col-sm-4" *ngFor="let social of socials.contact_social; let i =index">
         <!-- facebook -->
 
         <a class="col-xs-4" href={{social.url}} target="blank">
           <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x text-primary"></i>
+            <i class="fa fa-circle fa-stack-2x text-primary" [ngClass]="i%2 ==0 ? 'colorBlue': 'colorRed'"></i>
             <i class="{{social.icon}} fa-stack-1x fa-inverse"></i>
           </span>
         </a>

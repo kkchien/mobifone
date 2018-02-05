@@ -1,16 +1,18 @@
 <div class="container" style="min-height:30vh; ">
 
-  <div class="row col-xs-12 row-soccial" >
-    <div class="col-md-4 text-center" *ngFor="let social of info.contact_social">
-      <a href={{social.url}} target="blank">
+  <div class="row  row-soccial" >
+    <div class="col-md-3"></div>
+    <div class="col-md-2 text-center" *ngFor="let social of info.contact_social; let i =index">
+      <a href={{social.url}} target="blank" style="text-decoration: none;">
         <span class="fa-stack fa-4x">
-          <i class="fa fa-circle fa-stack-2x " style="color:rgb(255, 255, 255)"></i>
-          <i class="{{social.icon}} fa-stack-1x"></i>
+          <i class="fa fa-circle fa-stack-2x" [ngClass]="i%2 ===0 ? 'colorBlue' : 'colorRed'"></i>
+          <i class="{{social.icon}} fa-stack-1x" style="color:rgb(248, 249, 252)"></i>
         </span>
-        <p style="color:rgb(105, 102, 98)">{{social.url}}</p>
+        <!-- <p style="color:rgb(105, 102, 98)">{{social.url}}</p> -->
         <br/>
       </a>
     </div>
+    <div class="col-md-3"></div>
   </div>
   <div class="row row-infor">
     <div class="col-xs-12 contact-main">
@@ -19,11 +21,11 @@
           <div class="content-info">
             <strong class="title-company"> {{info.name}}</strong>
             <br>
-            <div> <strong>{{info.title_address}}</strong> : {{info.address}}</div>
-            <div> <strong>{{info.title_hotline}}</strong> : 
+            <div> <strong>{{info.title_address}}</strong>: {{info.address}}</div>
+            <div> <strong>{{info.title_hotline}}</strong>: 
               <span style="color:rgb(67, 224, 224)">{{info.number_hotline}}</span>
             </div>
-            <div> <strong>{{info.title_email}}</strong> : {{info.email}}</div>
+            <div> <strong>{{info.title_email}}</strong>: <a href="{{info.email}}" target="_blank" style="text-decoration: none">{{info.name_email}}</a></div>
             <div><strong>{{info.representative}}</strong>: {{info.name_repres}}</div>
             
           </div>
